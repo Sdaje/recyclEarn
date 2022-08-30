@@ -1,0 +1,42 @@
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding: 2vh;
+
+  .card {
+    display: inline-block;
+    position: relative;
+    width: 60vw;
+    height: 75vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: aliceblue;
+  }
+
+  h1 {
+    position: absolute;
+    left: 10px;
+    bottom: 60px;
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+    margin: 20px;
+  }
+
+  .hero {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+  }
+
+  button {
+    width: 80%;
+    height: 40px;
+    border: solid rgb(194, 194, 194) 1px;
+    box-shadow: 0 0 30px rgb(230,230,230);
+    color: rgb(118, 118, 118);
+  }
+}

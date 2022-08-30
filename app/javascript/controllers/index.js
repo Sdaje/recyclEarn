@@ -10,5 +10,5 @@ application.register("header", HeaderController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-// import VisibilityController from "./visibility_controller"
-// application.register("visibility", VisibilityController)
+import MapController from "./map_controller"
+application.register("map", MapController)
