@@ -1,0 +1,7 @@
+<h2><%= interest.category.capitalize %></h2>
+<p><%= interest.address %></p>
+<% if interest.website.nil? %>
+  <%= "" %>
+<% else %>
+  <a href="<%= interest.website %>">Web site</a>
+<% end %>

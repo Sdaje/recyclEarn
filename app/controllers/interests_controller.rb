@@ -8,7 +8,8 @@ class InterestsController < ApplicationController
       {
         lat: interest.latitude,
         lng: interest.longitude,
-        image_url: helpers.asset_url(image)
+        image_url: helpers.asset_url(image),
+        info_window: render_to_string(partial: "info_window", locals: {interest: interest})
       }
     end
   end
