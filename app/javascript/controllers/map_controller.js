@@ -14,6 +14,7 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+
     this.addMarkersToMap()
     this.fitMapToMarkers()
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
@@ -23,10 +24,10 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {
       const customMarker = document.createElement("div")
       customMarker.className = "marker"
-      customMarker.style.backgroundImage = `url('${marker.image_url}')`
-      customMarker.style.backgroundSize = "contain"
-      customMarker.style.width = "50px"
-      customMarker.style.height = "50px"
+      customMarker.style.backgroundColor = marker.color
+      customMarker.style.borderRadius = "6px"
+      customMarker.style.width = "12px"
+      customMarker.style.height = "12px"
 
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
@@ -40,6 +41,6 @@ export default class extends Controller {
   fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 0, maxZoom: 15, linear: true })
   }
 }

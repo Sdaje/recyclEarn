@@ -1,4 +1,4 @@
-<h2><%= interest.category.capitalize %></h2>
+<h2><%= interest.category.capitalize.gsub("_", " ") %></h2>
 <p><%= interest.address %></p>
 <% if interest.website.nil? %>
   <%= "" %>

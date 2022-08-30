@@ -3,13 +3,15 @@ class InterestsController < ApplicationController
     @interests = Interest.all
     @markers = @interests.geocoded.map do |interest|
       case interest.category
-      when "composter" then image = "compost.png"
+      when "composter" then color = "#478978"
+      when "recycling_center" then color = "#FFBF00"
+      when "glass_container" then color = "#2274A5"
       end
       {
         lat: interest.latitude,
         lng: interest.longitude,
-        image_url: helpers.asset_url(image),
-        info_window: render_to_string(partial: "info_window", locals: {interest: interest})
+        color: color,
+        info_window: render_to_string(partial: "info_window", locals: { interest: interest })
       }
     end
   end
