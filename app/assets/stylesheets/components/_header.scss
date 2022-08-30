@@ -1,0 +1,27 @@
+.inline-flex {
+  display: flex;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+header {
+  padding: 2vw;
+  margin: 2vw;
+  background: center center / cover rgba(244, 247, 254, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 5px;
+  width: 96vw;
+  .container {
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  img {
+    height: 50px;
+    border-radius: 50%;
+  }
+}
