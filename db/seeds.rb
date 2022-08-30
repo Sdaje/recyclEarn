@@ -4,6 +4,11 @@ puts "Destroy interests"
 Interest.destroy_all
 puts "Interests destroyed"
 
+puts "Create user"
+
+user = User.new(email: "dev@recylearn.com", password: "secret", city: "Bordeaux", first_name: "Jean", last_name: "Neymar")
+user.save!
+
 puts "Create composters"
 filepath = "db/data_base/composteur_bordeaux.json"
 composteurs = JSON.parse(File.read(filepath))
