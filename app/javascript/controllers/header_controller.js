@@ -5,8 +5,11 @@ export default class extends Controller {
   static targets = [ "hideable" ]
 
   toggleTargets() {
+    console.log(this)
     this.hideableTargets.forEach((el) => {
-      el.hidden = !el.hidden
+      console.log(el)
+      el.classList.toggle("open")
+      // el.style.height = "25vh"
     });
   }
 }
