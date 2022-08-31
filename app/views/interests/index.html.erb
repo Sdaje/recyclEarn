@@ -1,16 +1,16 @@
-<div class="map-filters">
-  <%= simple_form_for :search, url: interests_path, method: :get do |f| %>
-      <%= f.collection_check_boxes :query, [['composter', 'Composters'], ['recycling_center', 'Recycling centers'], ['glass_container', 'Glass containers']], :first, :last, include_hidden: false do |b| %>
-        <div class="map-filter">
-          <%= b.check_box %>
-          <%= b.label%>
-        </div>
-      <% end %>
-    <%= f.submit %>
-  <% end %>
-</div>
 <div style="width: 100%; height: 100vh;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="map-filters">
+        <%= simple_form_for :search, url: interests_path, method: :get do |f| %>
+            <div class="map-filter">
+              <%= f.collection_check_boxes :query, [['composter', 'Composters'], ['recycling_center', 'Recycling centers'], ['glass_container', 'Glass containers']], :first, :last, include_hidden: false do |b| %>
+                  <%= b.check_box class: "map-filter-checkbox"%>
+                  <%= b.label class: "map-filter-label"%>
+              <% end %>
+            </div>
+          <%= f.submit %>
+        <% end %>
+      </div>
 </div>
