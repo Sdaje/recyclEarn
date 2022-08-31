@@ -1,4 +1,27 @@
 // Specific CSS for your home-page
+* {
+  font-family: $body-font;
+}
+
+a {
+  color: $dark;
+}
+
+a:hover {
+  border-bottom: 2px solid $dark;
+}
+
+#home {
+  background-color: $light;
+  padding-top: 30px;
+  h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
 
 #content{
   margin-top: 15vh;

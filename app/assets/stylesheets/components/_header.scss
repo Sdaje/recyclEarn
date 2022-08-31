@@ -1,9 +1,18 @@
-.inline-flex {
-  display: flex;
+// Headers Stylesheet
+
+  // General Class
+
+#collapsible {
+  transition: all 0.5s ease-in-out;
+  transform-origin: top left;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .open {
-  height: 25vh !important;
+  max-height: 300px !important;
 }
 
 button {
@@ -11,22 +20,77 @@ button {
   background: none;
 }
 
-header {
-  padding: 2vw;
-  margin: 2vw;
-  background: center center / cover rgba(244, 247, 254, 0.2);
+  // Home Header
+
+#home header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+  padding: 0 40px;
+  width: 100%;
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  button {
+    color: $light;
+    background-color: $dark;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+  }
+  ul {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $light;
+    display: flex;
+    justify-content: flex-end;
+    li:nth-of-type(2n+1)::after {
+      content: "|";
+      padding: 0 10px;
+    }
+  }
+  .searchbar {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    align-items: center;
+    margin-top: 16px;
+    input {
+      border: none;
+      margin-left: 8px;
+      outline: none;
+    }
+    .submit {
+      display: none;
+    }
+  }
+}
+
+
+
+
+  // Page Header
+
+
+#page header {
+  padding: 0 2vw;
+  margin: 7vw;
+  background: center center / cover $light;
   backdrop-filter: blur(20px);
   border-radius: 5px;
-  width: 96vw;
+  width: 86vw;
   position: fixed;
+  color: $dark;
   top: 0;
   z-index: 2;
-  #collapsible{
-    transition: height 0.5s ease-out;
-    transform-origin: top left;
-    height: 0;
-    overflow: hidden;
-  }
   .container {
     padding: 2vw;
     margin: 2vw;
@@ -34,6 +98,7 @@ header {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    display: flex;
   }
   img {
     height: 50px;
