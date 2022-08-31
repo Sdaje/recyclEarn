@@ -29,11 +29,11 @@ export default class extends Controller {
       customMarker.style.width = "12px"
       customMarker.style.height = "12px"
 
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
+        // .setPopup(popup)
         .addTo(this.map)
     })
   }
@@ -41,6 +41,6 @@ export default class extends Controller {
   fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 0, maxZoom: 15, linear: true })
+    this.map.fitBounds(bounds, { padding: 0, maxZoom: 15, duration: 0 })
   }
 }

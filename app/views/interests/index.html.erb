@@ -1,5 +1,13 @@
-<div style="width: 100%; height: 100vh;"
-     data-controller="map"
-     data-map-markers-value="<%= @markers.to_json %>"
-     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div data-controller = "filter-map">
+  <div class="map-filters">
+    <%= simple_form_for :search, url: interests_path, method: :get, data: {filter_map_target: "form"} do |f| %>
+        <div class="map-filter">
+          <%= f.collection_check_boxes :query, [['composter', 'Composter'], ['recycling_center', 'Recycling center'], ['glass_container', 'Glass container']], :first, :last, include_hidden: false do |b| %>
+              <%= b.check_box class: "map-filter-checkbox", data: { filter_map_target: "checkbox", action: "click->filter-map#filter" }%>
+              <%= b.label class: "map-filter-label", data: { filter_map_target: "label"}%>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+  <%= render "map", markers: @markers %>
 </div>

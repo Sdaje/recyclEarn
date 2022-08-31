@@ -1,6 +1,9 @@
 class InterestsController < ApplicationController
   def index
     @interests = Interest.all
+
+    @interests = @interests.where(category: params[:search][:query]) if params[:search]
+
     @markers = @interests.geocoded.map do |interest|
       case interest.category
       when "composter" then color = "#478978"
@@ -11,11 +14,13 @@ class InterestsController < ApplicationController
         lat: interest.latitude,
         lng: interest.longitude,
         color: color,
-        info_window: render_to_string(partial: "info_window", locals: { interest: interest })
+        # info_window: render_to_string(partial: "info_window", locals: { interest: interest })
       }
     end
-  end
 
-  def search
+    respond_to do |format|
+      format.html
+      format.text { render partial: "interests/map", locals: { markers: @markers }, formats: [:html] }
+    end
   end
 end

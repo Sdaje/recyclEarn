@@ -1,0 +1,37 @@
+.map-filters{
+  position: relative;
+  z-index: 10;
+  top: 120px;
+  padding: 20px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.map-filter{
+  display: inline-block;
+  text-align: center;
+}
+
+.map-filter-checkbox{
+  display: none;
+}
+
+.map-filter-label{
+  color: #333333;
+  background-color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+}
+
+.mapboxgl-ctrl-top-right {
+  right: 35px !important;
+}
+
+.mapboxgl-ctrl {
+  border-radius: 25px;
+}
+
+.active{
+  background-color: #333333;
+  color: white;
+}
