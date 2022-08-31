@@ -1,0 +1,12 @@
+.map-filters{
+  position: absolute;
+  z-index: 1;
+  top: 200px;
+  left: 20px;
+  backdrop-filter: blur(20px);
+  background: center center / cover rgba(244, 247, 254, 0.2);
+}
+
+.map-filter{
+  color: red;
+}
