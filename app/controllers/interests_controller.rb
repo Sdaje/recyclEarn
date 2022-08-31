@@ -14,8 +14,13 @@ class InterestsController < ApplicationController
         lat: interest.latitude,
         lng: interest.longitude,
         color: color,
-        info_window: render_to_string(partial: "info_window", locals: { interest: interest })
+        # info_window: render_to_string(partial: "info_window", locals: { interest: interest })
       }
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "interests/map", locals: { markers: @markers }, formats: [:html] }
     end
   end
 end

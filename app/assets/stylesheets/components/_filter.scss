@@ -1,11 +1,10 @@
 .map-filters{
   position: relative;
   z-index: 10;
-  top: 70px;
+  top: 120px;
   padding: 20px;
   overflow-x: scroll;
   white-space: nowrap;
-
 }
 
 .map-filter{
@@ -14,7 +13,7 @@
 }
 
 .map-filter-checkbox{
-
+  display: none;
 }
 
 .map-filter-label{
@@ -30,4 +29,9 @@
 
 .mapboxgl-ctrl {
   border-radius: 25px;
+}
+
+.active{
+  background-color: #333333;
+  color: white;
 }
