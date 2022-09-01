@@ -2,6 +2,7 @@ class Learning < ApplicationRecord
   has_many :rewards, dependent: :destroy
   has_many :lectures, dependent: :destroy
   has_many :questions, dependent: :destroy
+  has_many :answers, through: :questions, dependent: :destroy
 
   validates :title, presence: true
   validates :topic, presence: true
