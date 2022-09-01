@@ -4,5 +4,6 @@ class LearningsController < ApplicationController
   end
 
   def show
+    @learning = Learning.find(params[:id])
   end
 end
