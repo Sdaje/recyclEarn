@@ -1,8 +1,6 @@
 class LearningsController < ApplicationController
   def index
-  end
-
-  def search
+    @learning = Learning.find_by(city: params[:query])
   end
 
   def show

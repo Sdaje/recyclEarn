@@ -11,9 +11,5 @@ Rails.application.routes.draw do
     resources :answers, only: :create
   end
   resources :rewards, only: :show
-  resources :interests, only: :index do
-    collection do
-      post :search
-    end
-  end
+  resources :interests, only: :index
 end
