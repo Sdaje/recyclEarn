@@ -26,7 +26,7 @@ user = User.new(email: "dev@recylearn.com", password: "secret", city: "Bordeaux"
 user.save!
 
 puts "Making a course"
-learning = Learning.new(title: "Animals", topic: "Fox", city: "Bordeaux", difficulty: 1)
+learning = Learning.new(title: "Animals", topic: "Fox", city: "Bordeaux", difficulty: 1, score: 80)
 learning.save!
 puts "Course made"
 

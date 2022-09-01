@@ -1,2 +1,8 @@
-<h1>Rewards#show</h1>
-<p>Find me in app/views/rewards/show.html.erb</p>
+<br>
+<br>
+
+<% if @reward.validate? %>
+  <%= render "rewards/score", { message: "Congratulations!", token: "you won #{@reward.learning.score} RC tokens" } %>
+<% else %>
+  <%= render "rewards/score", { message: "You failed", token: nil } %>
+<% end %>
