@@ -10,7 +10,7 @@ export default class extends Controller {
 
   disconnect() {
     let bounds = this.map.getBounds();
-    console.log(bounds)
+    localStorage.setItem('coord', bounds)
   }
 
   connect() {
@@ -46,6 +46,10 @@ export default class extends Controller {
   fitBounds() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 0, maxZoom: 15, duration: 0 })
+    const lastCoord = localStorage.getItem('coord').replace("LngLatBounds(LngLat(","").replace("LngLat(","").replace(")","").replace("))","").split(",");
+    const SWBound = [lastCoord[0],lastCoord[1]]
+    const NEBound = [lastCoord[2],lastCoord[3]]
+    this.map.fitBounds([SWBound, NEBound], { padding: 0, maxZoom: 15, duration: 0 })
+
   }
 }
