@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_160644) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_101917) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,10 +84,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_160644) do
     t.integer "difficulty"
     t.integer "penality", default: 5
     t.integer "score"
-    t.bigint "reward_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["reward_id"], name: "index_learnings_on_reward_id"
   end
 
   create_table "lectures", force: :cascade do |t|
@@ -116,10 +114,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_160644) do
   end
 
   create_table "rewards", force: :cascade do |t|
-    t.boolean "validate"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "validation"
+    t.bigint "learning_id", null: false
+    t.index ["learning_id"], name: "index_rewards_on_learning_id"
     t.index ["user_id"], name: "index_rewards_on_user_id"
   end
 
@@ -143,9 +143,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_160644) do
   add_foreign_key "answers", "options"
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
-  add_foreign_key "learnings", "rewards"
   add_foreign_key "lectures", "learnings"
   add_foreign_key "options", "questions"
   add_foreign_key "questions", "learnings"
+  add_foreign_key "rewards", "learnings"
   add_foreign_key "rewards", "users"
 end
