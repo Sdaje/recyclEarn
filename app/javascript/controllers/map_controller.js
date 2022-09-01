@@ -5,7 +5,12 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+  }
+
+  disconnect() {
+    let bounds = this.map.getBounds();
+    localStorage.setItem('coord', bounds)
   }
 
   connect() {
@@ -16,7 +21,7 @@ export default class extends Controller {
     })
 
     this.addMarkersToMap()
-    this.fitMapToMarkers()
+    this.fitBounds()
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
   }
 
@@ -29,18 +34,22 @@ export default class extends Controller {
       customMarker.style.width = "12px"
       customMarker.style.height = "12px"
 
-      // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
-        // .setPopup(popup)
+        .setPopup(popup)
         .addTo(this.map)
     })
   }
 
-  fitMapToMarkers() {
+  fitBounds() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 0, maxZoom: 15, duration: 0 })
+    const lastCoord = localStorage.getItem('coord').replace("LngLatBounds(LngLat(","").replace("LngLat(","").replace(")","").replace("))","").split(",");
+    const SWBound = [lastCoord[0],lastCoord[1]]
+    const NEBound = [lastCoord[2],lastCoord[3]]
+    this.map.fitBounds([SWBound, NEBound], { padding: 0, maxZoom: 15, duration: 0 })
+
   }
 }
