@@ -1,0 +1,6 @@
+<div class="banner-answers">
+ <%= simple_form_for([@question, @answer]) do |f| %>
+    <%= f.input :option, collection: @options.map {|option| [option.content, option.id]}, as: :radio_buttons %>
+    <%= f.submit %>
+ <% end %>
+</div>
