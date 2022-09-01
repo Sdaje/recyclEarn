@@ -10,11 +10,14 @@ class InterestsController < ApplicationController
       when "recycling_center" then color = "#FFBF00"
       when "glass_container" then color = "#2274A5"
       end
+      info_window_html = "<h3>#{interest.category.capitalize.gsub('_', ' ')}</h3>
+                      <p>#{interest.address}</p>
+                      #{interest.website.nil? ? '' : "<a href='#{interest.website}'>Web site</a>"}"
       {
         lat: interest.latitude,
         lng: interest.longitude,
         color: color,
-        # info_window: render_to_string(partial: "info_window", locals: { interest: interest })
+        info_window: info_window_html
       }
     end
 

@@ -1,6 +1,6 @@
 .map-filters{
   position: relative;
-  z-index: 10;
+  z-index: 1;
   top: 120px;
   padding: 20px;
   overflow-x: scroll;
@@ -29,6 +29,7 @@
 
 .mapboxgl-ctrl {
   border-radius: 25px;
+  z-index: 2;
 }
 
 .active{

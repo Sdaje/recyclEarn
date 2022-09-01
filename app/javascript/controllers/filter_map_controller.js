@@ -5,10 +5,7 @@ export default class extends Controller {
   static targets = ["form", "map", "label", "checkbox"]
 
   connect() {
-    this.labelTargets.forEach((label) => {
-      console.log(label.outerText.toLowerCase().replace(" ","_"))
-    })
-    console.log(this.labelTargets)
+
   }
 
   filter(event) {
