@@ -1,0 +1,23 @@
+
+.form-inputs.container {
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+  input {
+    width: 100%;
+    border: none;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  label {
+    display: none;
+  }
+  fieldset {
+    border: none;
+  }
+}
