@@ -1,5 +1,5 @@
 class Learning < ApplicationRecord
-  belongs_to :reward
+  has_many :rewards, dependent: :destroy
   has_many :lectures, dependent: :destroy
   has_many :questions, dependent: :destroy
 
@@ -10,4 +10,8 @@ class Learning < ApplicationRecord
   validates :difficulty, presence: true
 
   enum difficulty: { easy: 1, medium: 2, hard: 3, impossible: 4 }
+
+  def next_question(current_question)
+    questions.where('id > ?', current_question.id).first
+  end
 end

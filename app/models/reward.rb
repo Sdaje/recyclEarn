@@ -1,6 +1,4 @@
 class Reward < ApplicationRecord
   belongs_to :user
-  has_many :learnings, dependent: :destroy
-
-  validates :validate, presence: true
+  belongs_to :learning
 end
