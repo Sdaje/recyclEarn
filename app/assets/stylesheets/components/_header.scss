@@ -9,6 +9,9 @@
   overflow: hidden;
   margin-top: 10px;
   width: 100%;
+  a:hover {
+    border-bottom: 2px solid $dark;
+  }
 }
 
 .open {
