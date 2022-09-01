@@ -1,7 +1,7 @@
 <header id="options" data-controller="header">
   <div class="container inline-flex">
     <% if user_signed_in? %>
-      <h1>Hi! <%= current_user.first_name %></h1>
+      <h3>Hi! <%= current_user.first_name %></h3>
     <% else %>
       <h1>Recycl'Earn</h1>
     <% end %>
