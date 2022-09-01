@@ -1,2 +1,13 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+
+
+<div class="container" id="quiz">
+  <div id="advancing-bar">
+    _______________________
+  </div>
+    <%= render 'questions/question', question: @question %>
+    <%= render 'questions/choices', options: @options %>
+    <div class="event-listener" id='button'>
+      <button>Confirm</button>
+    </div>
+  </div>
+</div>

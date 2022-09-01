@@ -3,5 +3,4 @@ class Option < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :content, presence: true
-  validates :good, presence: true
 end

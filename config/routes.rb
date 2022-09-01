@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       post :search
     end
   end
-  resources :questions, only: :show
-  resources :answers, only: :create
+  resources :questions, only: :show do
+    resources :answers, only: :create
+  end
   resources :rewards, only: :show
   resources :interests, only: :index
 end
