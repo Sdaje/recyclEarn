@@ -5,3 +5,22 @@
 .mapboxgl-popup-content {
 
 }
+
+.my-map {
+  height: 100vh;
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+}
+
+.mapboxgl-ctrl-top-right {
+  top: 150px !important;
+}
+
+.map-filters {
+  top: 220px !important;
+}
+
+.map-filters::-webkit-scrollbar {
+  display: none;
+}
