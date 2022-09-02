@@ -1,6 +1,21 @@
-<h1>Learnings#index</h1>
-<p>Find me in app/views/learnings/index.html.erb</p>
-
-<br><br><br><br><br><br>
-
-<%= link_to "How to recycle animals", learning_path(Learning.last) %>
+<div id="content" class="container">
+  <%# <div class="lone-fact">
+    <h1>Did you know ?</h1>
+    <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
+  </div> %>
+  <div class="container">
+    <div class="wrapper">
+      <% @learnings.each do |learning| %>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1592670130429-fa412d400f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+          <div class="pill-discover">
+            <%= link_to "Lecture: #{learning.title}", learning_path(learning) %>
+          </div>
+          <div class="learning-info">
+            <p>Topic: <%= learning.topic %></p>
+            <p>Difficulty: <%= learning.difficulty %></p>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
