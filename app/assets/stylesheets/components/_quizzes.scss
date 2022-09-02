@@ -27,8 +27,20 @@
   }
 
   #button {
-    display: flex;
+    display: block;
     justify-content: center;
+  }
+
+  .submit-button {
+    margin: 10px 2vh 10px 2vh;
+    text-align: center;
+  }
+
+  input {
+    background-color: #efefef;
+    border-radius: 5px;
+    width: 60%;
+    height: 50px;
   }
 }
 
@@ -39,16 +51,19 @@
 .labels {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 10vh;
   border: solid rgb(194, 194, 194) 1px;
-  border-radius: 2vh;
+  background-color: #efefef;
+  border-radius: 5px;
   padding: 2px;
-  margin: 10px;
+  margin: 10px 2vh 32px 2vh;
+  text-align: -webkit-center;
 }
 
 .radio-active {
-  color: blue;
-  background-color: red;
+  color: rgb(94, 94, 94);
+  background-color: #ffffff;
 }
 //   button {
 //     width: 80%;
