@@ -6,7 +6,7 @@ class Reward < ApplicationRecord
     learning.answers.joins(:option).where(user: user, option: { good: true }).count
   end
 
-  def validate?
-    validate
+  def validation?
+    validation
   end
 end

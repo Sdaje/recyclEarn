@@ -3,3 +3,20 @@
   padding: 2vh;
   border: solid rgb(194, 194, 194) 1px;
 }
+
+.start {
+  display: flex;
+  justify-content: center;
+  color: rgb(70, 70, 70);
+  :hover {
+    background-color: white;
+    color: black;
+  }
+}
+.start-button {
+  width: 150px;
+  border-radius: 5px;
+  text-align: center;
+  border: solid grey 1px;
+
+}

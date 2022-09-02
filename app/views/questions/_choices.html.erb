@@ -1,8 +1,17 @@
 <div class="banner-answers">
  <%= simple_form_for([@question, @answer]) do |f| %>
-    <%= f.input :option, collection: @options.map {|option| [option.content, option.id]}, as: :radio_buttons %>
     <div class="event-listener" id='button'>
-      <%= f.submit %>
+      <%= f.collection_radio_buttons :option, @options.map {|option| [option.content, option.content]}, :first, :last do |b| %>
+        <%= b.radio_button class: "radio-butt", data: { questions_target: 'radio', action: "click->questions#fill" } %>
+        <%= b.label class:"labels", data: { questions_target: 'button' }%>
+        <% end %>
+    </div>
+    <div class="submit-button">
+      <% if @question.learning.next_question(@question).present? %>
+          <%= f.submit value: 'Next'%>
+      <% else %>
+          <%= f.submit value: 'Finish quiz'%>
+      <% end %>
     </div>
  <% end %>
 </div>
