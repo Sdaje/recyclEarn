@@ -2,4 +2,15 @@
 <p>Find me in app/views/learnings/show.html.erb</p>
 <br>
 <br><br><br><br><br>
-<%= link_to "Start the quiz", question_path(@learning.questions.first) %>
+<div class="rich-card">
+<h1><%= @lecture.title %></h1>
+<%= @lecture.content %>
+</div>
+<br>
+<div class="start">
+  <div class="start-button">
+    <%= link_to "Start the quiz", question_path(@learning.questions.first) %>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br>
