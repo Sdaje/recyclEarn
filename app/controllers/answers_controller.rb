@@ -5,7 +5,9 @@ class AnswersController < ApplicationController
       question_id: params[:question_id],
       user: current_user
     )
-    @answer.option_id = @question.options.find_by('content like ?', params[:answer][:option]).id
+    if params[:answer][:option].present?
+      @answer.option_id = @question.options.find_by('content like ?', params[:answer][:option]).id
+    end
     if @answer.save
       if @question.learning.next_question(@question).present?
         redirect_to(question_path(@question.learning.next_question(@question)))
