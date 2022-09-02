@@ -1,7 +1,7 @@
 .map-filters{
   position: relative;
   z-index: 1;
-  top: 120px;
+  top: 80px !important;
   padding: 20px;
   overflow-x: scroll;
   white-space: nowrap;
@@ -24,11 +24,12 @@
 }
 
 .mapboxgl-ctrl-top-right {
+  top: 10px !important;
   right: 35px !important;
 }
 
 .mapboxgl-ctrl {
-  border-radius: 25px;
+  // border-radius: 25px;
   z-index: 2;
 }
 
