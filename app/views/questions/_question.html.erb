@@ -1,4 +1,4 @@
 <%= render "shared/progress_bar" %>
-<div id="quiz-ask" data-progress-bar-target="question" data-id="<%= @question.id %>">
+<div id="quiz-ask" data-progress-bar-target="question" data-id="<%= @question.answer_ids.count %>">
   <%= @question.content %>
 </div>

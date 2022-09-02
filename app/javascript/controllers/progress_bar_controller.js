@@ -8,7 +8,6 @@ export default class extends Controller {
     console.log(this.element)
     console.log(this.itemTarget)
     console.log(this.questionTarget.dataset.id)
-    const completion = this.questionTarget.dataset.id * 20;
-    this.itemTarget.style.width = `${completion}%`;
+    this.itemTarget.style.width = `${this.questionTarget.dataset.id * 100}%`;
   }
 }
