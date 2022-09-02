@@ -6,6 +6,12 @@
         <%= b.label class:"labels", data: { questions_target: 'button' }%>
         <% end %>
     </div>
-      <%= f.submit %>
+    <div class="submit-button">
+      <% if @question.learning.next_question(@question).present? %>
+          <%= f.submit value: 'Next'%>
+      <% else %>
+          <%= f.submit value: 'Finish quiz'%>
+      <% end %>
+    </div>
  <% end %>
 </div>
