@@ -32,6 +32,24 @@
   }
 }
 
+.radio-butt{
+  display: none;
+}
+
+.labels {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  border: solid rgb(194, 194, 194) 1px;
+  border-radius: 2vh;
+  padding: 2px;
+  margin: 10px;
+}
+
+.radio-active {
+  color: blue;
+  background-color: red;
+}
 //   button {
 //     width: 80%;
 //     height: 40px;
