@@ -5,6 +5,7 @@ class LearningsController < ApplicationController
     else
       @learnings = Learning.all
     end
+    @learning = @learnings.last
   end
 
   def show
