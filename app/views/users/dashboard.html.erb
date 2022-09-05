@@ -38,7 +38,7 @@
         <% @learnings_todo.each do |learning| %>
           <div class="mini-cards">
             <p><%= learning.title %></p>
-            <%= image_tag "learnings/#{learning.title.downcase}.png", alt: "badge", width: 100%>
+            <%= image_tag "learnings/#{learning.title.downcase.gsub(" ","_")}.png", alt: "badge", width: 100%>
           </div>
         <% end %>
       <% end %>
