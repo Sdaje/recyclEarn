@@ -5,27 +5,29 @@
 <div id="learnings" class="container-fluid">
   <div class="container">
     <h3>Formation Suggérée</h3>
-    <div class="card-learnings">
+    <%= link_to(learning_path(@learning)) do %>
+      <div class="card-learnings">
 
-      <div class="container-fluid">
-        <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
-        <%# <img src="assets/learnings/plastic.jpg" alt=""> %>
-      </div>
-
-      <div class="container card-title">
-        <div class="pill">
-          <%= link_to "Lecture: #{@learning.title.capitalize}", learning_path(@learning) %>
+        <div class="container-fluid">
+          <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
+          <%# <img src="assets/learnings/plastic.jpg" alt=""> %>
         </div>
-      </div>
 
-      <div class="learning-info">
-        <div class="container">
-          <p><i class="fa-solid fa-circle-question"></i> <%= @learning.topic.capitalize %></p>
-          <p><i class="fa-solid fa-gauge"></i> <%= @learning.difficulty.capitalize %></p>
+        <div class="container card-title">
+          <div class="pill">
+            <p>Lecture: <%= @learning.title.capitalize %></p>
+          </div>
         </div>
-      </div>
 
-    </div>
+        <div class="learning-info">
+          <div class="container">
+            <p><i class="fa-solid fa-circle-question"></i> <%= @learning.topic.capitalize %></p>
+            <p><i class="fa-solid fa-gauge"></i> <%= @learning.difficulty.capitalize %></p>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
   </div>
 
   <div class="container">
@@ -34,26 +36,28 @@
 
   <div class="scrolling-wrapper-flexbox">
     <% @learnings.each do |learning| %>
-      <div class="card-learnings">
+      <%= link_to(learning_path(learning)) do %>
+        <div class="card-learnings">
 
-        <div class="container-fluid">
-          <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
-        </div>
-
-        <div class="container card-title">
-          <div class="pill">
-            <%= link_to "Lecture: #{learning.title.capitalize}", learning_path(learning) %>
+          <div class="container-fluid">
+            <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
           </div>
-        </div>
 
-        <div class="learning-info">
-          <div class="container">
-            <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
-            <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
+          <div class="container card-title">
+            <div class="pill">
+              <p><%= learning.title.capitalize %></p>
+            </div>
           </div>
-        </div>
 
-      </div>
+          <div class="learning-info">
+            <div class="container">
+              <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
+              <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
