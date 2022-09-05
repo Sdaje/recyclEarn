@@ -1,5 +1,12 @@
 #quiz {
   margin-top: 120px;
+
+  #little-info {
+    position: absolute;
+    right: 20px;
+    top: 140px;
+    font-size: 10px;
+  }
   .container {
     #advancing-bar {
       display: flex;
@@ -57,10 +64,12 @@
   }
 
   input {
-    background-color: #efefef;
+    background-color: rgba(64, 168, 88, 0.7);
     border-radius: 5px;
     width: 60%;
+    border: none;
     height: 50px;
+    font-weight: bold;
   }
 
   .radio-butt{
@@ -71,8 +80,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    border: solid rgb(194, 194, 194) 1px;
+    color: black;
+    height: 9vh;
     background-color: #efefef;
     border-radius: 5px;
     padding: 2px;
@@ -81,8 +90,9 @@
   }
 
   .radio-active {
-    color: rgb(94, 94, 94);
-    background-color: #ffffff;
+    color: black;
+    background-color: #40A858;
+    box-shadow: 0 0 6px #b5b5b5;
   }
 
   button {
@@ -91,5 +101,10 @@
     border: solid rgb(194, 194, 194) 1px;
     box-shadow: 0 0 30px rgb(230,230,230);
     color: rgb(118, 118, 118);
+  }
+
+  #quiz-ask h3 {
+    display: flex;
+    justify-content: center;
   }
 }
