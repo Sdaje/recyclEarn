@@ -8,7 +8,8 @@
     <div class="card-learnings">
 
       <div class="container-fluid">
-        <img src="assets/learnings/plastic.jpg" alt="">
+        <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
+        <%# <img src="assets/learnings/plastic.jpg" alt=""> %>
       </div>
 
       <div class="container card-title">
@@ -36,7 +37,7 @@
       <div class="card-learnings">
 
         <div class="container-fluid">
-          <img src="assets/learnings/plastic.jpg" alt="">
+          <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
         </div>
 
         <div class="container card-title">
