@@ -1,4 +1,4 @@
-<div class="container" id="quiz" data-controller="progress-bar questions">
+<div class="container" id="quiz" data-controller="progress-bar questions" data-progress-bar-number-value = <%= @user_question_number %> data-progress-bar-total-value = <%= @question.learning.questions.count %>>
 <% if @user_question_number > 0 %>
     <p id='little-info'><%= @user_question_number + 1 %> questions left !</p>
 <% else %>
