@@ -1,17 +1,34 @@
-<div id="content" class="container">
-  <%# <div class="lone-fact">
-    <h1>Did you know ?</h1>
-    <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
-  </div> %>
-  <div class="container">
-    <div class="wrapper">
-      <% @learnings.each do |learning| %>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1578839926012-95f8a7f2be35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
-          <div class="pill-discover">
-            <%= link_to "Discover: Learnings in #{learning.city}", learnings_path %>
-          </div>
+<%# <div class="lone-fact">
+  <h1>Did you know ?</h1>
+  <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
+</div> %>
+<div class="container-fluid">
+  <div class="card-cta">
+    <div class="container">
+      <div class="container">
+        <p>Trouvez des lessons en fonction de votre ville.</p>
+      </div>
+      <%= form_with url: learnings_path, method: :get, class:"home-form" do %>
+        <div class="input-light">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Cherchez dans une ville"
+          %>
+          <i class="fa-solid fa-tree-city"></i>
         </div>
+        <%= submit_tag "Search", class: "submit" %>
       <% end %>
+    </div>
+  </div>
+  <div class="card-cta">
+    <div class="container">
+      <div class="container">
+        <p>Recherchez des points d'intérêts.</p>
+      </div>
+      <%= link_to (interests_path), class: "btn-blue" do %>
+        Aller à la carte <i class="fa-solid fa-map-location"></i>
+      <% end %>
+    </div>
   </div>
 </div>

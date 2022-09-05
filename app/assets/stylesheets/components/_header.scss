@@ -1,84 +1,12 @@
 // Headers Stylesheet
 
-  // General Class
-
-#collapsible {
-  transition: all 0.5s ease-in-out;
-  transform-origin: top left;
-  max-height: 0;
-  overflow: hidden;
-  margin-top: 10px;
-  width: 100%;
-  a:hover {
-    border-bottom: 2px solid $dark;
-  }
-}
-
-.open {
-  max-height: 300px !important;
-}
-
-button {
-  border: none;
-  background: none;
-}
-
   // Home Header
 
-#home header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: fixed;
-  padding: 0 40px;
-  width: 100%;
-  .container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  button {
-    color: $light;
-    background-color: $dark;
-    border-radius: 5px;
-    width: 32px;
-    height: 32px;
-  }
-  ul {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: $light;
-    display: flex;
-    justify-content: flex-end;
-    li:nth-of-type(2n+1)::after {
-      content: "|";
-      padding: 0 10px;
-    }
-  }
-  .searchbar {
-    display: flex;
-    width: 100%;
-    background: #fff;
-    padding: 8px 20px;
-    border-radius: 50px;
-    align-items: center;
-    margin-top: 16px;
-    input {
-      border: none;
-      margin-left: 8px;
-      outline: none;
-    }
-    .submit {
-      display: none;
-    }
+.avatar {
+  img {
+    border-radius: 50%;
   }
 }
-
-
-
 
   // Page Header
 
@@ -89,8 +17,7 @@ button {
   background: center center / cover $light;
   backdrop-filter: blur(20px);
   border-radius: 5px;
-  width: 94vw;
-  position: fixed;
+  width: 100%;
   color: $dark;
   top: 0;
   z-index: 2;
