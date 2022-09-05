@@ -64,10 +64,12 @@
   }
 
   input {
-    background-color: #efefef;
+    background-color: rgba(64, 168, 88, 0.7);
     border-radius: 5px;
     width: 60%;
+    border: none;
     height: 50px;
+    font-weight: bold;
   }
 
   .radio-butt{
@@ -89,7 +91,7 @@
 
   .radio-active {
     color: black;
-    background-color: #e1e0e0;
+    background-color: #40A858;
     box-shadow: 0 0 6px #b5b5b5;
   }
 
@@ -100,6 +102,7 @@
     box-shadow: 0 0 30px rgb(230,230,230);
     color: rgb(118, 118, 118);
   }
+
   #quiz-ask h3 {
     display: flex;
     justify-content: center;

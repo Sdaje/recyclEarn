@@ -3,11 +3,27 @@
     <h1><%= message %></h1>
     <br>
   </div>
-    <%= render "rewards/share" if token.present? %>
+    <div class="share-container"><%= render "rewards/share" if token.present? %></div>
   <div class="card-reward">
-    <p><%= token %></p>
+    <h2><%= token %></h2>
   </div>
-  <%#= render "rewards/log_in" %>
-   <%# Add after log_in if current_user.nil? %>
-  <%#= button_to "Back to Homepage", users_dashboard_path %>
+  <% if token.nil? %>
+  <h4>We found <%= @reward.learning.questions.count - @reward.achievement %> wrong answers</h5>
+  <% else %>
+  <% end %>
+  <div class="container-answers">
+    <% @reward.learning.answers.joins(:option).where(user: current_user, option: { good: false }).each do |answer| %>
+      <div class="answer-card">
+        <h5><%= answer.question.content %></h5>
+        <p style="color: #40A858;"><%= answer.option.question.options.where(good: true)[0].content %></p>
+        <p style="color: #f14668;"> <%= answer.option.content %></p>
+      </div>
+    <% end %>
+  </div>
+  <% if token.present? %>
+    <button><%= link_to "Back to Courses", learnings_path %></button>
+  <% else %>
+    <button><%= link_to "Back to lesson", learning_path(@reward.learning) %></button>
+    <span id='sidekiq-span'>You will be able to try the quiz again in 30 minutes</span>
+  <% end %>
 </div>
