@@ -1,5 +1,8 @@
 <div data-controller = "filter-map">
   <div class="map-filters">
+  <i class="fa-solid fa-circle composter-dot"></i>
+  <i class="fa-solid fa-circle glass-container-dot"></i>
+  <i class="fa-solid fa-circle recycling-center-dot"></i>
     <%= simple_form_for :search, url: interests_path, method: :get, data: {filter_map_target: "form"} do |f| %>
         <div class="map-filter">
           <%= f.collection_check_boxes :query, [['composter', 'Composter'], ['recycling_center', 'Recycling center'], ['glass_container', 'Glass container']], :first, :last, include_hidden: false do |b| %>

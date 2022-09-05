@@ -87,7 +87,7 @@ option.save!
 puts "Options 2 added succesfully, well done it's amazing"
 
 puts "making question 3"
-quiz = Question.new(content: "What does the car says ?", learning_id: learning.id)
+quiz = Question.new(content: "What does the cat says ?", learning_id: learning.id)
 quiz.save!
 puts "question saved"
 

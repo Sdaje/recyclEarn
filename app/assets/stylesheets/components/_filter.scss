@@ -17,9 +17,10 @@
 }
 
 .map-filter-label{
-  color: #333333;
-  background-color: white;
-  padding: 8px 24px;
+  font-size: 18px;
+  color: $dark;
+  background-color: $white;
+  padding: 12px 24px 12px 42px;
   border-radius: 50px;
 }
 
@@ -34,6 +35,30 @@
 }
 
 .active{
-  background-color: #333333;
-  color: white;
+  background-color: $dark;
+  color: $white;
+}
+
+.composter-dot{
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 24px;
+  color: #03CEA4;
+}
+
+.recycling-center-dot{
+  position: absolute;
+  top: 20px;
+  left: 191px;
+  font-size: 24px;
+  color: #D5573B;
+}
+
+.glass-container-dot{
+  position: absolute;
+  top: 20px;
+  left: 392px;
+  font-size: 24px;
+  color: #6369D1;
 }

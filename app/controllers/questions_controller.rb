@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @options = @question.options
     @answer = Answer.new
+    @user_question_number = @question.questions_left
     # @learning = Learning.where(params[:id])
     # @questions = @learning.question.all
     # respond_to do |format|
