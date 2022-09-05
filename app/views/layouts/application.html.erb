@@ -14,22 +14,21 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
   </head>
 
-  <body id="<%= current_page?(root_path) ? "home" : current_page?(learnings_path) ? "learnings" : "page" %>">
+  <body>
+    <div id="<%= current_page?(root_path) ? "home" : current_page?(learnings_path) ? "learnings" : "page" %>">
+      <% if current_page?(root_path) %>
+        <%= render "shared/header_homepage" %>
+      <% elsif current_page?(interests_path) %>
+      <% else %>
+        <%= render "shared/header" %>
+      <% end %>
 
-    <% if current_page?(root_path) %>
-      <%= render "shared/header_homepage" %>
-    <% elsif current_page?(interests_path) %>
-    <% else %>
-      <%= render "shared/header" %>
-    <% end %>
+      <%= render "shared/flashes" %>
 
-    <%= render "shared/flashes" %>
-
-    <div class="container">
       <%= yield %>
-    </div>
 
-    <%= render "shared/navbar" %>
+      <%= render "shared/navbar" %>
+    </div>
 
   </body>
 </html>
