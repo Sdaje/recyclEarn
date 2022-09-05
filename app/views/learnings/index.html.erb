@@ -3,24 +3,46 @@
   <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
 </div> %>
 <div id="learnings" class="container-fluid">
-  <h2>Formation Suggérée</h2>
+  <h3>Formation Suggérée</h3>
+  <div class="card-learnings">
+
+    <div class="container-fluid">
+      <img src="assets/learnings/plastic.jpg" alt="">
+    </div>
+
+    <div class="container card-title">
+      <div class="pill">
+        <%= link_to "Lecture: #{@learning.title.capitalize}", learning_path(@learning) %>
+      </div>
+    </div>
+
+    <div class="learning-info">
+      <div class="container">
+        <p><i class="fa-solid fa-circle-question"></i> <%= @learning.topic.capitalize %></p>
+        <p><i class="fa-solid fa-gauge"></i> <%= @learning.difficulty.capitalize %></p>
+      </div>
+    </div>
+
+  </div>
+
+  <h3>Toutes nos formations</h3>
   <% @learnings.each do |learning| %>
     <div class="card-learnings">
 
       <div class="container-fluid">
-        <img src="https://images.unsplash.com/photo-1592670130429-fa412d400f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+        <img src="assets/learnings/plastic.jpg" alt="">
       </div>
 
       <div class="container card-title">
         <div class="pill">
-          <%= link_to "Lecture: #{learning.title}", learning_path(learning) %>
+          <%= link_to "Lecture: #{learning.title.capitalize}", learning_path(learning) %>
         </div>
       </div>
 
       <div class="learning-info">
         <div class="container">
-          <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic %></p>
-          <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty %></p>
+          <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
+          <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
         </div>
       </div>
 

@@ -17,11 +17,15 @@
 }
 
 .card-learnings {
-  margin: 20px 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
   width: 100%;
   background-color: $light-green;
   border-radius: 10px;
   position: relative;
+  i {
+    margin-right: 8px;
+  }
   img {
     border-radius: 10px;
     aspect-ratio: 2/1;
