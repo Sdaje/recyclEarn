@@ -6,9 +6,9 @@ class InterestsController < ApplicationController
 
     @markers = @interests.geocoded.map do |interest|
       case interest.category
-      when "composter" then color = "#478978"
-      when "recycling_center" then color = "#FFBF00"
-      when "glass_container" then color = "#2274A5"
+      when "composter" then color = "#03CEA4"
+      when "recycling_center" then color = "#D5573B"
+      when "glass_container" then color = "#6369D1"
       end
       info_window_html = "<h3>#{interest.category.capitalize.gsub('_', ' ')}</h3>
                       <p>#{interest.address}</p>
