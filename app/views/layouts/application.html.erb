@@ -15,7 +15,8 @@
   </head>
 
   <body>
-    <div id="<%= current_page?(root_path) ? "home" : current_page?(learnings_path) ? "learnings" : "page" %>">
+    <div id="<%= current_page?(root_path) ? "home" : current_page?(interests_path) ? "interests" : "page" %>">
+
       <% if current_page?(root_path) %>
         <%= render "shared/header_homepage" %>
       <% elsif current_page?(interests_path) %>
@@ -28,6 +29,7 @@
       <%= yield %>
 
       <%= render "shared/navbar" %>
+
     </div>
 
   </body>

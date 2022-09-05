@@ -1,21 +1,29 @@
-<div id="content" class="container">
-  <%# <div class="lone-fact">
-    <h1>Did you know ?</h1>
-    <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
-  </div> %>
-  <div class="container">
-    <div class="wrapper">
-      <% @learnings.each do |learning| %>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1592670130429-fa412d400f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
-          <div class="pill-discover">
-            <%= link_to "Lecture: #{learning.title}", learning_path(learning) %>
-          </div>
-          <div class="learning-info">
-            <p>Topic: <%= learning.topic %></p>
-            <p>Difficulty: <%= learning.difficulty %></p>
-          </div>
+<%# <div class="lone-fact">
+  <h1>Did you know ?</h1>
+  <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
+</div> %>
+<div id="learnings" class="container-fluid">
+  <h2>Formation Suggérée</h2>
+  <% @learnings.each do |learning| %>
+    <div class="card-learnings">
+
+      <div class="container-fluid">
+        <img src="https://images.unsplash.com/photo-1592670130429-fa412d400f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+      </div>
+
+      <div class="container card-title">
+        <div class="pill">
+          <%= link_to "Lecture: #{learning.title}", learning_path(learning) %>
         </div>
-      <% end %>
-  </div>
+      </div>
+
+      <div class="learning-info">
+        <div class="container">
+          <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic %></p>
+          <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty %></p>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
 </div>
