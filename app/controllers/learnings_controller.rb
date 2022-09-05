@@ -1,6 +1,7 @@
 class LearningsController < ApplicationController
   def index
     @learnings = Learning.all
+    @learning = @learnings.last
   end
 
   def show

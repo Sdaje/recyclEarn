@@ -1,3 +1,21 @@
+.pill {
+  border-radius: 10px;
+  background-color: $white;
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-left: 20px;
+
+  .card-learnings {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    width: 90%;
+  }
+}
+
 .card-cta {
   background-color: $white;
   width: 100%;
@@ -9,6 +27,48 @@
   align-items: center;
   color: $dark;
   margin: 30px 0;
+}
+
+.card-learnings {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: $light-green;
+  border-radius: 10px;
+  position: relative;
+  i {
+    margin-right: 8px;
+  }
+  img {
+    border-radius: 10px;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+  }
+  .card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    .pill {
+      padding: 13px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 15px;
+    }
+  }
+  .learning-info {
+    padding: 20px 0;
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 .mini-cards {
