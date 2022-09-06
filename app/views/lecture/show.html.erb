@@ -1,0 +1,24 @@
+
+<br><br><br><br><br><br><br><br><br><br>
+<div class="rich-card">
+
+<h1><%= @lecture.title %></h1>
+<%= @lecture.content %>
+</div>
+<br>
+<div class="start">
+  <div class="start-button">
+    <% if @learning.lectures.where('id < ?', @lecture.id).present? %>
+      <%= link_to "Chapitre précédent", lecture_path(@learning.lectures.where('id < ?', @lecture.id).last) %>
+    <% end %>
+  </div>
+  <div class="start-button">
+    <% if @learning.lectures.where('id > ?', @lecture.id).present? %>
+      <%= link_to "Chapitre suivant", lecture_path(@learning.lectures.where('id > ?', @lecture.id).first) %>
+    <% else %>
+      <%= link_to "Commencez le quiz", question_path(@learning.questions.first) %>
+    <% end %>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br>
