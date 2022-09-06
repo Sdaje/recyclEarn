@@ -1,15 +1,20 @@
 <div class="container-reward">
   <div class="card-reward">
-    <h1><%= message %></h1>
+    <% if token.present? %>
+      <h1><%= message %></h1>
+    <% else %>
+      <h1 id='failed-message'><%= message %></h1>
+    <% end %>
     <br>
   </div>
     <div class="share-container"><%= render "rewards/share" if token.present? %></div>
+    <% if token.present? %>
   <div class="card-reward">
     <h2><%= token %></h2>
   </div>
+    <% end %>
   <% if token.nil? %>
-  <h4>We found <%= @reward.learning.questions.count - @reward.achievement %> wrong answers</h5>
-  <% else %>
+    <h4 id='answer-found'>We found <%= @reward.learning.questions.count - @reward.achievement %> wrong answers</h5>
   <% end %>
   <div class="container-answers">
     <% @reward.learning.answers.joins(:option).where(user: current_user, option: { good: false }).each do |answer| %>
@@ -23,7 +28,8 @@
   <% if token.present? %>
     <button><%= link_to "Back to Courses", learnings_path %></button>
   <% else %>
-    <button><%= link_to "Back to lesson", learning_path(@reward.learning) %></button>
+    <button><%= link_to "Back to lesson", lecture_path(@reward.learning.lectures.first) %></button>
     <span id='sidekiq-span'>You will be able to try the quiz again in 30 minutes</span>
   <% end %>
+  <br><br><br><br><br>
 </div>
