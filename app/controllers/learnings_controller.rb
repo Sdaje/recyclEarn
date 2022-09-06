@@ -19,16 +19,7 @@ class LearningsController < ApplicationController
     learning_id = Reward.where(user_id: current_user, validation: "false").sample
     @learning = Learning.find(learning_id.id)
   end
-
-  def show
-    @learning = Learning.find(params[:id])
-    if @learning.lectures.first.nil?
-      @lecture = "This course is empty"
-    else
-      @lecture = @learning.lectures.first
-    end
-  end
-
+  
   private
 
   def calculate_user_score
