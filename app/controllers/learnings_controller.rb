@@ -1,7 +1,7 @@
 class LearningsController < ApplicationController
   def index
     if params[:query].present?
-      @learnings = Learning.where(city: params[:query].capitalize)
+      @learnings = Learning.where("city ilike ? or city ilike 'toutes'", params[:query])
     else
       @learnings = Learning.all
     end

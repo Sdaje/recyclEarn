@@ -5,11 +5,11 @@
 <div id="learnings" class="container-fluid">
   <div class="container">
     <h3>Formation Suggérée</h3>
-    <%= link_to(learning_path(@learning)) do %>
+    <%= link_to(lecture_path(Lecture.where(learning_id: @learning).first)) do %>
       <div class="card-learnings">
 
         <div class="container-fluid">
-          <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
+          <%#= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
           <%# <img src="assets/learnings/plastic.jpg" alt=""> %>
         </div>
 
@@ -36,11 +36,11 @@
 
   <div class="scrolling-wrapper-flexbox">
     <% @learnings.each do |learning| %>
-      <%= link_to(learning_path(learning)) do %>
+      <%= link_to(lecture_path(Lecture.where(learning_id: @learning).first)) do %>
         <div class="card-learnings">
 
           <div class="container-fluid">
-            <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
+            <%#= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
           </div>
 
           <div class="container card-title">
