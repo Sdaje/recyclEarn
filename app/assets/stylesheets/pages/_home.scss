@@ -8,6 +8,10 @@ a {
   color: $dark;
 }
 
+.locked-learning {
+  filter: opacity(0.3);
+}
+
 a.btn-blue {
   margin: 20px 0;
   padding: 16px;
