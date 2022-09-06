@@ -3,7 +3,7 @@
   margin: 30px auto;
   height: 20px;
   background: $light;
-  border: 1px solid $dark;
+  border: 1px solid $green;
   position: relative;
   border-radius: 5px;
   .completed-pb {
@@ -11,7 +11,7 @@
     top: -1px;
     height: 20px;
     // width: 10%;
-    background: $dark;
+    background: $green;
     border-radius: 5px;
   }
 }
