@@ -1,7 +1,3 @@
-<%# <div class="lone-fact">
-  <h1>Did you know ?</h1>
-  <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
-</div> %>
 <div id="learnings" class="container-fluid">
   <div class="container">
     <h3>Formation Suggérée</h3>
@@ -10,12 +6,11 @@
 
         <div class="container-fluid">
           <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
-          <%# <img src="assets/learnings/plastic.jpg" alt=""> %>
         </div>
 
         <div class="container card-title">
           <div class="pill">
-            <p>Lecture: <%= @learning.title.capitalize %></p>
+            <p><%= @learning.title.capitalize %></p>
           </div>
         </div>
 
@@ -23,6 +18,7 @@
           <div class="container">
             <p><i class="fa-solid fa-circle-question"></i> <%= @learning.topic.capitalize %></p>
             <p><i class="fa-solid fa-gauge"></i> <%= @learning.difficulty.capitalize %></p>
+            <p><i class="fa-solid fa-leaf"></i> <%= @learning.score  %></p>
           </div>
         </div>
 
@@ -35,9 +31,9 @@
   </div>
 
   <div class="scrolling-wrapper-flexbox">
-    <% @learnings.each do |learning| %>
-      <%= link_to(learning_path(learning)) do %>
-        <div class="card-learnings">
+    <% @unlocked_learnings.each do |learning| %>
+      <%= link_to learning_path(learning), class: "card-learnings" do %>
+        <div class="">
 
           <div class="container-fluid">
             <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
@@ -53,6 +49,32 @@
             <div class="container">
               <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
               <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
+              <p><i class="fa-solid fa-leaf"></i> <%= learning.score  %></p>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+    <% @locked_learnings.each do |learning| %>
+      <%= link_to learning_path(learning), class: "card-learnings" do %>
+        <div class="locked-learning">
+
+          <div class="container-fluid">
+            <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
+          </div>
+
+          <div class="container card-title">
+            <div class="pill">
+              <p><%= learning.title.capitalize %></p>
+            </div>
+          </div>
+
+          <div class="learning-info">
+            <div class="container">
+              <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
+              <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
+              <p><i class="fa-solid fa-leaf"></i> <%= learning.score  %></p>
             </div>
           </div>
 

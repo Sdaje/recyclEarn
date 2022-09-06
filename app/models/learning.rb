@@ -10,7 +10,7 @@ class Learning < ApplicationRecord
   validates :penality, presence: true
   validates :difficulty, presence: true
 
-  enum difficulty: { easy: 1, medium: 2, hard: 3, impossible: 4 }
+  enum difficulty: { facile: 1, moyen: 2, difficile: 3, impossible: 4 }
 
   def next_question(current_question)
     questions.where('id > ?', current_question.id).first
