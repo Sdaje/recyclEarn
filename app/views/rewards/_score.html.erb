@@ -15,7 +15,6 @@
     <% end %>
   <% if token.nil? %>
     <h4 id='answer-found'>We found <%= @reward.learning.questions.count - @reward.achievement %> wrong answers</h5>
-  <% end %>
   <div class="container-answers">
     <% @reward.learning.answers.joins(:option).where(user: current_user, option: { good: false }).each do |answer| %>
       <div class="answer-card">
@@ -23,8 +22,9 @@
         <p style="color: #40A858;"><%= answer.option.question.options.where(good: true)[0].content %></p>
         <p style="color: #f14668;"> <%= answer.option.content %></p>
       </div>
-    <% end %>
   </div>
+  <% end %>
+    <% end %>
   <% if token.present? %>
     <button><%= link_to "Back to Courses", learnings_path %></button>
   <% else %>

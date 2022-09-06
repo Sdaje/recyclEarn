@@ -1,6 +1,5 @@
 class LearningsController < ApplicationController
   def index
-
     # Filter learnings
     if params[:query].present?
       @learnings = Learning.where(city: params[:query].capitalize).in_order_of(:difficulty, ["facile", "moyen", "difficile", "impossible"].reverse)
