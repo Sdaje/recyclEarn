@@ -9,7 +9,7 @@
         <div class="card">
           <img src="https://images.unsplash.com/photo-1592670130429-fa412d400f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
           <div class="pill-discover">
-            <%= link_to "Lecture: #{learning.title}", learning_path(learning) %>
+            <%= link_to "Lecture: #{learning.title}", lecture_path(Lecture.where(learning_id: learning).first) %>
           </div>
           <div class="learning-info">
             <p>Topic: <%= learning.topic %></p>

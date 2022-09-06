@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get 'users/dashboard', to: 'users#dashboard'
-  resources :learnings, only: [:index, :show] do
+  resources :learnings, only: [:index] do
     collection do
       post :search
     end
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :rewards, only: :show
   resources :interests, only: :index
+  resources :lecture, only: :show
 end
