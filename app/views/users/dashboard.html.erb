@@ -1,17 +1,37 @@
 <div class="container">
 
-  <div class="fun-fact">
-    <h4>Le saviez-vous:</h4>
-    <p>" <%= @fun_fact %> "</p>
+  <div class="container inline-flex infos-frame">
+    <div>
+      <h2>Salut <%= @user.first_name %> !</h2>
+      <p><%= @user.city %></p>
+      <p class="underscore">_______</p>
+    </div>
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/32631203?v=4 " alt="">
+    </div>
   </div>
 
-  <div>
-    <div class="total-score">
-      <h5>Points</h5>
+  <div class="dash-infos">
+    <div class="card-dash">
+      <h5># Points</h5>
       <div>
         <h2><%= @total_score.positive? ? @total_score : 0 %> <i class="fa-solid fa-leaf"></i></h2>
       </div>
     </div>
+    <div class="card-dash">
+    <h5># Lessons</h5>
+      <div>
+        <h2>
+          <%= @learnings_done.count %>
+          <i class="fa-solid fa-book-open"></i>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="fun-fact">
+    <h4>Le saviez-vous:</h4>
+    <p>" <%= @fun_fact %> "</p>
   </div>
 
   <div class="learnings-info" data-controller="dashboard-nav">
@@ -30,7 +50,7 @@
       <% else %>
         <% @badges.each do |badge| %>
           <div class="mini-cards">
-            <%= image_tag badge, alt: "badge", width: 100 %>
+            <%= image_tag badge, alt: "badge", class: "img-badge" %>
           </div>
         <% end %>
       <% end %>
@@ -43,7 +63,7 @@
         <% @learnings_todo.each do |learning| %>
           <div class="mini-cards">
             <p><%= learning.title %></p>
-            <%= image_tag "learnings/#{learning.title.downcase.gsub(" ","_")}.png", alt: "badge", width: 100%>
+            <%= image_tag "learnings/#{learning.title.downcase.gsub(" ","_")}.jpg", alt: "learning", width: 100%>
           </div>
         <% end %>
       <% end %>
