@@ -5,10 +5,15 @@
     <p>" <%= @fun_fact %> "</p>
   </div>
 
-  <div class="total-score">
-    <h4>Total des points: <%= @total_score.positive? ? @total_score : 0 %> RC tokens</h4>
-    <i class="fa-solid fa-trophy"></i>
+  <div>
+    <div class="total-score">
+      <h5>Points</h5>
+      <div>
+        <h2><%= @total_score.positive? ? @total_score : 0 %> <i class="fa-solid fa-leaf"></i></h2>
+      </div>
+    </div>
   </div>
+
   <div class="learnings-info" data-controller="dashboard-nav">
     <ul class = "nav-pills">
       <li data-action = "click->dashboard-nav#badgeClick" data-dashboard-nav-target = "badgeNav">
