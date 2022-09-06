@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user.rewards.each do |reward|
       @total_score += reward.validation ? reward.learning.score : -reward.learning.penality
       @learnings_done << reward.learning
-      @badges << "badges/#{reward.learning.title.downcase.gsub(" ", "_")}.jpg"
+      @badges << "badges/#{reward.learning.title.downcase.gsub(" ", "_").gsub("é","e").gsub("è","e").gsub("à","a")}.jpg"
     end
     @learnings_todo = Learning.where(city: @user.city) - @learnings_done
   end

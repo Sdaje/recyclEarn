@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CounterController from "./counter_controller"
+application.register("counter", CounterController)
+
 import DashboardNavController from "./dashboard_nav_controller"
 application.register("dashboard-nav", DashboardNavController)
 
