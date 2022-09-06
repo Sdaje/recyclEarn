@@ -1,10 +1,16 @@
 class LearningsController < ApplicationController
   def index
+
+    # Filter learnings
     if params[:query].present?
-      @learnings = Learning.where(city: params[:query].capitalize)
+      @learnings = Learning.where(city: params[:query].capitalize).in_order_of(:difficulty, ["facile", "moyen", "difficile", "impossible"].reverse)
     else
       @learnings = Learning.all
     end
+    if params[:difficulty].present?
+      @learnings = Learning.filter_by_status(params[:difficulty])
+    end
+
     calculate_user_score
     @unlocked_learnings = @learnings.where("score <= ?", @total_score)
     @locked_learnings = @learnings.where("score > ?", @total_score)
