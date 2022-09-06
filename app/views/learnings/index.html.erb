@@ -1,7 +1,7 @@
 <div id="learnings" class="container-fluid">
   <div class="container">
     <h3>Formation Suggérée</h3>
-    <%= link_to(learning_path(@learning)) do %>
+    <%= link_to(lecture_path(Lecture.where(learning_id: @learning).first)) do %>
       <div class="card-learnings">
 
         <div class="container-fluid">
@@ -32,7 +32,7 @@
 
   <div class="scrolling-wrapper-flexbox">
     <% @unlocked_learnings.each do |learning| %>
-      <%= link_to learning_path(learning), class: "card-learnings" do %>
+      <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
         <div class="">
 
           <div class="container-fluid">
@@ -57,7 +57,7 @@
       <% end %>
     <% end %>
     <% @locked_learnings.each do |learning| %>
-      <%= link_to learning_path(learning), class: "card-learnings" do %>
+      <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
         <div class="locked-learning">
 
           <div class="container-fluid">

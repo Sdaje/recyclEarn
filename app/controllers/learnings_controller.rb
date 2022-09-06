@@ -17,9 +17,13 @@ class LearningsController < ApplicationController
 
     # Set a random learning which user didn't already validate
     learning_id = Reward.where(user_id: current_user, validation: "false").sample
-    @learning = Learning.find(learning_id.id)
+    if learning_id.nil?
+      @learning = Learning.last
+    else
+      @learning = Learning.find(learning_id.id)
+    end
   end
-  
+
   private
 
   def calculate_user_score
