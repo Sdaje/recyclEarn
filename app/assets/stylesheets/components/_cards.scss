@@ -1,0 +1,91 @@
+.pill {
+  border-radius: 10px;
+  background-color: $white;
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-left: 20px;
+
+  .card-learnings {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    width: 90%;
+  }
+}
+
+.card-cta {
+  background-color: $white;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $dark;
+  margin: 30px 0;
+}
+
+.card-learnings {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: $light-green;
+  border-radius: 10px;
+  position: relative;
+  i {
+    margin-right: 8px;
+  }
+  img {
+    border-radius: 10px;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+  }
+  .card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    .pill {
+      padding: 13px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 15px;
+    }
+  }
+  .learning-info {
+    padding: 20px 0;
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.mini-cards {
+  p {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background-color: white;
+  width: 90%;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  }
+  img {
+    border-radius: 16px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+}

@@ -1,18 +1,33 @@
+.input-light {
+  background-color: $light-blue;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0 16px;
+  i {
+    color: $green;
+  }
+}
 
-.form-inputs.container {
-  max-width: 90%;
+
+.home-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 15vh;
+  margin: 20px 0;
   input {
     width: 100%;
     border: none;
-    margin: 10px 0;
-    padding: 5px 10px;
-    background-color: #fff;
-    border-radius: 5px;
+    padding: 16px 0;
+    border-radius: 10px;
+    background: transparent;
+    color: $dark;
+  }
+  input[type=submit]{
+    display: none;
   }
   label {
     display: none;

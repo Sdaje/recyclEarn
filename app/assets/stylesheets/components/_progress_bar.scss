@@ -1,0 +1,17 @@
+.progress-bar {
+  width: 80%;
+  margin: 30px auto;
+  height: 20px;
+  background: $light;
+  border: 1px solid $dark;
+  position: relative;
+  border-radius: 5px;
+  .completed-pb {
+    position: absolute;
+    top: -1px;
+    height: 20px;
+    // width: 10%;
+    background: $dark;
+    border-radius: 5px;
+  }
+}

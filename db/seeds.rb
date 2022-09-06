@@ -14,6 +14,7 @@ Option.destroy_all
 User.destroy_all
 Reward.destroy_all
 Learning.destroy_all
+FunFact.destroy_all
 
 puts "Destroy interests"
 Interest.destroy_all
@@ -332,7 +333,7 @@ option.save!
 puts "Options 2 added succesfully, well done it's amazing"
 
 puts "making question 3"
-quiz = Question.new(content: "What does the car says ?", learning_id: learning.id)
+quiz = Question.new(content: "What does the cat says ?", learning_id: learning.id)
 quiz.save!
 puts "question saved"
 
@@ -412,9 +413,8 @@ composteurs.each do |composteur|
   latitude = composteur["fields"]["geo_shape"]["coordinates"].last
   interest = Interest.new(address: address, latitude: latitude, longitude: longitude, category: 1)
   interest.save!
-  puts "#{n} / #{composteurs.count}"
 end
-puts "Composters created"
+puts "#{composteurs.count} Composters created"
 
 puts "Create recycling centers"
 filepath = "db/data_base/dechetteries_bordeaux.json"
@@ -427,9 +427,8 @@ centers.each do |center|
   latitude = center["fields"]["geo_shape"]["coordinates"].last
   interest = Interest.new(address: address, latitude: latitude, longitude: longitude, category: 2, website: "https://www.bordeaux.fr/p911/les-centres-de-recyclage-dechetteries")
   interest.save!
-  puts "#{n} / #{centers.count}"
 end
-puts "Recycling centers created"
+puts "#{centers.count} Recycling centers created"
 
 puts "Create Glass containers"
 filepath = "db/data_base/verre_bordeaux.json"
@@ -442,6 +441,8 @@ containers.each do |container|
   address = "Glass container ##{n}"
   interest = Interest.new(address: address, latitude: latitude, longitude: longitude, category: 3)
   interest.save!
-  puts "#{n} / #{containers.count}"
 end
-puts "Glass containers created"
+puts "#{containers.count} Glass containers created"
+
+puts "Create fun facts"
+FunFact.create!(content:"Prêt de 35% de nos déchets peuvent être compostés")

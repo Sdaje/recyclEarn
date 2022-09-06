@@ -1,22 +1,8 @@
-<header id="options" data-controller="header">
+<header>
   <div class="container inline-flex">
-    <% if user_signed_in? %>
-      <h3>Hi! <%= current_user.first_name %></h3>
-    <% else %>
-      <h1>Recycl'Earn</h1>
-    <% end %>
-    <button data-action="header#toggleTargets">
-      <img src="https://avatars.githubusercontent.com/u/32631203?v=4" alt="">
-    </button>
-  </div>
-  <div id="collapsible" data-header-target="hideable">
-    <ul>
-      <% if user_signed_in? %>
-        <%= button_to "logout", destroy_user_session_path, method: :delete  %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
-      <% end %>
-      <li class="item">Settings</li>
-    </ul>
+    <%= image_tag "logo-white.svg", alt: "Recyclearn" %>
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/32631203?v=4 " alt="">
+    </div>
   </div>
 </header>

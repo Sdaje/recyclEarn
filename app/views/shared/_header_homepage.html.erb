@@ -1,27 +1,11 @@
-<header id="options" data-controller="header">
-  <div class="container inline-flex">
-    <h1>Recycl'Earn</h1>
-    <button data-action="header#toggleTargets">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+<header>
+  <div class="container-fluid inline-flex">
+    <%= image_tag "logo.svg", alt: "Recyclearn" %>
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/32631203?v=4 " alt="">
+    </div>
   </div>
-  <div id="collapsible" data-header-target="hideable">
-    <ul>
-      <li class="item">
-        <%= link_to "Sign in", new_user_session_path %>
-      </li>
-      <li class="item">
-        <%= link_to "Sign up", new_user_registration_path %>
-      </li>
-    </ul>
+  <div class="container-fluid">
+    <p>Prêt à en apprendre <br> sur le recyclage.</p>
   </div>
-  <%= form_with url: learnings_path, method: :get, class: "searchbar" do %>
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search in your city"
-    %>
-    <%= submit_tag "Search", class: "submit" %>
-  <% end %>
 </header>

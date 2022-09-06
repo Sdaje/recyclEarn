@@ -6,7 +6,7 @@ export default class extends Controller {
   static targets = ["radio", "button"]
 
   connect() {
-    console.log(this.radioTarget.getAttribute(data-content));
+
   }
 
   fill(event) {

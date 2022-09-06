@@ -4,4 +4,8 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :content, presence: true
+
+  def questions_left
+    learning.questions.where('id > ?', id).count
+  end
 end

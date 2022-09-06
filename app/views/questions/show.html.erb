@@ -1,9 +1,9 @@
-<br><br><br>
-
-<div class="container" id="quiz" data-controller= "questions">
-  <div id="advancing-bar">
-    _______________________
-  </div>
+<div class="container" id="quiz" data-controller="progress-bar questions" data-progress-bar-number-value = <%= @user_question_number %> data-progress-bar-total-value = <%= @question.learning.questions.count %>>
+<% if @user_question_number > 0 %>
+    <p id='little-info'><%= @user_question_number + 1 %> questions left !</p>
+<% else %>
+    <p id='little-info'>Last question !</p>
+<% end %>
     <%= render 'questions/question', question: @question %>
     <%= render 'questions/choices', options: @options %>
   </div>
