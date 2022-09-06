@@ -1,0 +1,18 @@
+// Here is the style code for containers
+
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-fluid, .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
