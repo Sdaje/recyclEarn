@@ -10,7 +10,7 @@
       </div>
       <%= form_with url: learnings_path, method: :get, class:"home-form" do %>
         <div class="input-light">
-          <%= text_field_tag :query,
+          <%= text_field_tag :search,
             params[:query],
             class: "form-control",
             placeholder: "Cherchez dans une ville"

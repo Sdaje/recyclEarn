@@ -30,56 +30,19 @@
     <h3>Toutes nos formations</h3>
   </div>
 
-  <div class="scrolling-wrapper-flexbox">
-    <% @unlocked_learnings.each do |learning| %>
-      <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
-        <div class="">
+  <div class="learnings-filter" data-controller="learnings">
+    <%= simple_form_for :filter, url: learnings_path, method: :get,
+        html: {
+          class: "learnings-filter",
+          data: {
+            learnings_target: "form",
+            action: "change->learnings#filter"
+          }
+        } do |f| %>
+      <%= f.input :difficulty, input_html: { "data-learnings-target": "select" }, collection: Learning.difficulties.keys  %>
 
-          <div class="container-fluid">
-            <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_').gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
-          </div>
-
-          <div class="container card-title">
-            <div class="pill">
-              <p><%= learning.title.capitalize %></p>
-            </div>
-          </div>
-
-          <div class="learning-info">
-            <div class="container">
-              <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
-              <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
-              <p><i class="fa-solid fa-leaf"></i> <%= learning.score  %></p>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
-    <% end %>
-    <% @locked_learnings.each do |learning| %>
-      <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
-        <div class="locked-learning">
-
-          <div class="container-fluid">
-            <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_').gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
-          </div>
-
-          <div class="container card-title">
-            <div class="pill">
-              <p><%= learning.title.capitalize %></p>
-            </div>
-          </div>
-
-          <div class="learning-info">
-            <div class="container">
-              <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
-              <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
-              <p><i class="fa-solid fa-leaf"></i> <%= learning.score  %></p>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
-    <% end %>
+     <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
+        <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>
+     </div>
   </div>
 </div>

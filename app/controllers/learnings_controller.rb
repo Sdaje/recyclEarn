@@ -1,25 +1,40 @@
 class LearningsController < ApplicationController
   def index
+    # Set a random learning which user didn't already validate
+    reward = Reward.where(user_id: current_user, validation: "false").sample
+    if reward.nil?
+      @learning = Learning.last
+    else
+      @learning = Learning.find(reward.learning_id)
+    end
+
     # Filter learnings
     if params[:query].present?
-      @learnings = Learning.where(city: params[:query].capitalize).in_order_of(:difficulty, ["facile", "moyen", "difficile", "impossible"].reverse)
+      @learnings = Learning.where(city: params[:query].capitalize)
     else
       @learnings = Learning.all
     end
-    if params[:difficulty].present?
-      @learnings = Learning.filter_by_status(params[:difficulty])
-    end
+    @learnings = Learning.where(difficulty: params[:filter]) if params[:filter]
 
+    # Sort learnings by locked status
     calculate_user_score
     @unlocked_learnings = @learnings.where("score <= ?", @total_score)
     @locked_learnings = @learnings.where("score > ?", @total_score)
 
-    # Set a random learning which user didn't already validate
-    learning_id = Reward.where(user_id: current_user, validation: "false").sample
-    if learning_id.nil?
-      @learning = Learning.last
-    else
-      @learning = Learning.find(learning_id.id)
+    # Render learnings
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text {
+        render  partial: "shared/learnings_filter",
+                locals: { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings },
+                formats: [:html]
+      }
+    end
+  end
+
+  def filter
+    if params[:difficulty].present?
+      # raise
     end
   end
 
