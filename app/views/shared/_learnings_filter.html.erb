@@ -1,0 +1,25 @@
+<% learnings.each do |learning| %>
+  <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
+    <div class="">
+
+      <div class="container-fluid">
+        <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
+      </div>
+
+      <div class="container card-title">
+        <div class="pill">
+          <p><%= learning.title.capitalize %></p>
+        </div>
+      </div>
+
+      <div class="learning-info">
+        <div class="container">
+          <p><i class="fa-solid fa-circle-question"></i> <%= learning.topic.capitalize %></p>
+          <p><i class="fa-solid fa-gauge"></i> <%= learning.difficulty.capitalize %></p>
+          <p><i class="fa-solid fa-leaf"></i> <%= learning.score  %></p>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+<% end %>
