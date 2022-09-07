@@ -1,24 +1,25 @@
 class LearningsController < ApplicationController
   def index
+    # Filter learnings
+    if params[:search].present?
+      @learnings = Learning.where(city: params[:search].capitalize)
+    else
+      @learnings = Learning.all
+    end
+    @learnings = Learning.all if params[:filter] == ""
+    @learnings = Learning.where(difficulty: params[:filter]) if params[:filter]
+
     # Set a random learning which user didn't already validate
     reward = Reward.where(user_id: current_user, validation: "false").sample
     if reward.nil?
-      @learning = Learning.last
+      @learning = @learnings.sample
     else
       @learning = Learning.find(reward.learning_id)
     end
 
-    # Filter learnings
-    if params[:query].present?
-      @learnings = Learning.where(city: params[:query].capitalize)
-    else
-      @learnings = Learning.all
-    end
-    @learnings = Learning.where(difficulty: params[:filter]) if params[:filter]
-
     # Sort learnings by locked status
     calculate_user_score
-    @unlocked_learnings = @learnings.where("score <= ?", @total_score)
+    @unlocked_learnings = @learnings.where("score = 80 or score <= ?", @total_score)
     @locked_learnings = @learnings.where("score > ?", @total_score)
 
     # Render learnings

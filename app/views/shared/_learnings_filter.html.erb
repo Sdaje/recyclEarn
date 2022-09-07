@@ -23,7 +23,7 @@
 <% end %>
 
 <% locked_learnings.each do |learning| %>
-  <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
+  <div class="card-learnings">
     <div class="locked-learning">
 
       <div class="container-fluid">
@@ -45,5 +45,5 @@
       </div>
 
     </div>
-  <% end %>
+  </div>
 <% end %>
