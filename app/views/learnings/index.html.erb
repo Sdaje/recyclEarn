@@ -30,17 +30,23 @@
     <h3>Toutes nos formations</h3>
   </div>
 
-  <div class="learnings-filter" data-controller="learnings">
-    <%= simple_form_for :filter, url: learnings_path, method: :get,
-        html: {
-          class: "learnings-filter",
-          data: {
-            learnings_target: "form",
-            action: "change->learnings#filter"
-          }
-        } do |f| %>
-      <%= f.input :difficulty, input_html: { "data-learnings-target": "select" }, collection: Learning.difficulties.keys  %>
-    <% end %>
+  <div id="learnings-filter" data-controller="learnings">
+    <div class="container">
+      <%# <button>Filtrer by</button> %>
+      <%= simple_form_for :filter, url: learnings_path, method: :get,
+          html: {
+            class: "learnings-filter",
+            data: {
+              learnings_target: "form",
+              action: "change->learnings#filter"
+            }
+          } do |f| %>
+        <div class="dropdown-filter">
+          <%= f.input :difficulty, input_html: { "data-learnings-target": "select" }, :include_blank => "Difficulté", collection: Learning.difficulties.keys  %>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      <% end %>
+    </div>
 
     <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
       <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>

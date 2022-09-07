@@ -1,0 +1,33 @@
+#learnings-filter {
+  .learnings-filter {
+    padding: 10px 0;
+  }
+  label {
+    display: none;
+  }
+  .dropdown-filter {
+    border: 1px solid $light-green;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 30vw;
+  }
+  select {
+    color: $dark;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("https://fontawesome.com/icons/chevron-down?s=solid&f=classic");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+  }
+  select:focus {
+    outline: none;
+  }
+  i {
+    color: $dark;
+  }
+}
