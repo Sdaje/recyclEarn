@@ -40,7 +40,6 @@
           }
         } do |f| %>
       <%= f.input :difficulty, input_html: { "data-learnings-target": "select" }, collection: Learning.difficulties.keys  %>
-      <%= f.button :submit %>
     <% end %>
 
     <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">

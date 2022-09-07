@@ -14,11 +14,7 @@ class LearningsController < ApplicationController
     else
       @learnings = Learning.all
     end
-
-    if params[:filter]
-      @learnings = Learning.where(difficulty: params[:filter])
-      # raise
-    end
+    @learnings = Learning.where(difficulty: params[:filter]) if params[:filter]
 
     # Sort learnings by locked status
     calculate_user_score
