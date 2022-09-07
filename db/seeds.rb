@@ -385,22 +385,40 @@ lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 0/"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture = Lecture.new(title: "Alimentation", content: "<h3>L’alimentation</h3>
+  <p>On ne pense souvent pas assez à l’alimentation lorsqu’on pense à notre empreinte carbone. C’est cependant une des sources majeures de pollution pour la plupart.</p>
+  <h5>Réduire la viande</h5>
+  <p>Ce n’est pas uniquement pour des raisons de santé qu’il faut éviter de manger trop souvent de la viande. Que cela soit pour son transport, son conditionnement ou encore sa conservation, la viande est une source majeur de pollution. Il faut penser à éviter d’en consommer trop régulièrement mais surtout éviter d’acheter une viande qui n’est pas produite localement.</p>
+  <h5>Acheter localement</h5>
+  <p>Nulle besoin d’expliquer la raison derrière laquelle il vaut mieux acheter des produits locaux et de saison. Le secteur du transport est le premier émetteur de gaz à effet de serre et ses impacts sur l'environnement sont nombreux.</p>
+  <h5>Vérifier l’emballage</h5>
+  <p>Il est important de vérifier l’emballage des produits avant de les acheter car trop souvent encore, le plastique utilisé est celui qui est le moins cher à se procurer par l’entreprise et est donc de mauvaise qualité et difficile à recycler.</p>",learning_id: learningc.id)
 lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 1/7"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture = Lecture.new(title: "Transport", content: "<h3>Le transport</h3>
+  <p>L’avion est à proscrire, il faut privilégier dans la limite du possible la marche et le vélo. Les bienfaits de ces derniers supplantent les autres moyens de transport de très loin. A défaut de cela, les transports en communs représentent aussi une très bonne alternative à l’utilisation trop fréquente de la voiture. </p>
+  <h5>La voiture électrique</h5>
+  <p>La voiture électrique est un début de solution. Les matériaux utilisés pour les construire ont un impact environnemental énorme. Cependant, il est préférable à la pollution engendrée par les voitures à combustibles, surtout dans les pays comme la France où l’énergie du réseau est relativement propre.</p>",learning_id: learningc.id)
 lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 2/7"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture = Lecture.new(title: "Chez soi", content: "<h3>Chez Vous</h3>
+  <h5>Gérer les dépenses en énergie</h5>
+  <p>Prendre le temps d’éteindre la télévision durant la nuit, utiliser la lumière du jour pendant la journée plutôt que les ampoules, éteindre l’air climatisé ou le chauffage lorsque l’on sort de la maison. Une isolation thermique de qualité peut, de plus, grandement réduire votre besoin en chauffage.</p>
+  <h5><i class='fas fa-question'></i> Renseignez-vous</h5>
+  <p>De nombreux fournisseurs d’énergie proposent des solutions écologiques et économiques afin d’être approvisionner en énergie verte. De plus, selon le type d’habitation, l’utilisation de panneau solaire peut être une possibilité.</p>
+  <img src='../assets/courses/green.png' alt='fournisseurs verts'>",learning_id: learningc.id)
 lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 3/7"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture = Lecture.new(title: "Les banques", content: "<h3><i class='fa-solid fa-building-columns'></i> Votre banque</h3>
+  <p>Connaissez-vous le système de réserves fractionnaires (fractional reserve banking), communément utilisé dans la plupart des pays ? Les banques peuvent utiliser une partie de l’argent qui réside dans les comptes des particuliers afin d’investir, et peut donc ne garder qu’un faible pourcentage de l’argent que vous épargnez sur votre compte en banque. Malheureusement, les investissements qui résultent indirectement de votre argent durement gagné peut donc sans votre accord être utilisé pour investir dans des entreprises très polluantes.</p>
+  <h5><i class='fas fa-question'></i> Renseignez-vous</h5>
+  <p>Demandez à votre conseiller bancaire si votre banque utilise ce système et dans le cas où c’est le cas, vous pouvez changer de banque pour en trouver une qui n’utilise pas ce système.</p>",learning_id: learningc.id)
 lecture.save!
 puts "lecture added to learning"
 
@@ -583,139 +601,93 @@ option.save!
 puts "Options added succesfully, well done it's amazing"
 
 puts "making question"
-quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningc.id)
+quiz = Question.new(content: "Quel est le produit qui laisse la plus grosse empreinte carbone ?", learning_id: learningc.id)
 quiz.save!
 puts "question saved"
 
 puts "adding options to the question"
-option = Option.create(content: "souple et difficile à recycler", good: false)
+option = Option.create(content: "Les fruits hors saisons", good: false)
 option.question_id = quiz.id
 option.save!
 
-option = Option.create(content: "dûr et facile à recycler", good: false)
+option = Option.create(content: "La viande en général", good: true)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "souple et facile à recycler", good: true)
+option = Option.create(content: "L'alcool en général", good: false)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "dûr et difficile à recycler", good: false)
+option = Option.create(content: "L'huile de palme", good: false)
 option.question = quiz
 option.save!
 puts "Options added succesfully, well done it's amazing"
 
 puts "making question 2"
-quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningc.id)
+quiz = Question.new(content: "Quel est le moyen le plus simple de réduire son empreinte carbone au supermarché ?", learning_id: learningc.id)
 quiz.save!
 puts "question saved"
 
 puts "adding options to the question"
-option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option = Option.create(content: "Choisir des produits locaux", good: true)
 option.question_id = quiz.id
 option.save!
 
-option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option = Option.create(content: "Prendre uniquement des produits sans emballage plastique", good: false)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option = Option.create(content: "Préferer aller dans un magasin bio", good: false)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option = Option.create(content: "Eviter d'acheter du surgelé", good: false)
 option.question = quiz
 option.save!
 puts "Options 2 added succesfully, well done it's amazing"
 
 puts "making question 3"
-quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningc.id)
+quiz = Question.new(content: "Aujourd'hui pour réduire son empreinte carbone, la voiture électrique est une solution qui est :", learning_id: learningc.id)
 quiz.save!
 puts "question saved"
 
 puts "adding options to the question"
-option = Option.create(content: "5 différents labels de plastiques", good: false)
+option = Option.create(content: "très efficace et devrait être accessible à tous", good: false)
 option.question_id = quiz.id
 option.save!
 
-option = Option.create(content: "5 différents types de plastiques", good: false)
+option = Option.create(content: "peu efficace comparé à d'autre solutions", good: false)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "7 différents types de plastiques", good: false)
+option = Option.create(content: "efficace selon la source de notre approvisionnement en électricité", good: true)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "7 différents labels de plastique", good: true)
+option = Option.create(content: "inefficace car nécessite des matériaux dont l'extraction pollue énormément", good: false)
 option.question = quiz
 option.save!
 puts "Options added succesfully, well done it's amazing"
 
 puts "making question 4"
-quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningc.id)
+quiz = Question.new(content: "Le système de réserves fractionnaires permet aux banques :", learning_id: learningc.id)
 quiz.save!
 puts "question saved"
 
 puts "adding options to the question"
-option = Option.create(content: "Le PET", good: false)
+option = Option.create(content: "d'investir dans le développement durable", good: false)
 option.question_id = quiz.id
 option.save!
 
-option = Option.create(content: "Le LP-DE", good: true)
+option = Option.create(content: "d'utiliser une partie de l'argent de ses clients pour investir", good: true)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "Le PP", good: false)
+option = Option.create(content: "d'avoir plus de liberté fiscale et de protéger le marché boursier", good: false)
 option.question = quiz
 option.save!
 
-option = Option.create(content: "Le PS", good: false)
-option.question = quiz
-option.save!
-puts "Options added succesfully, well done it's amazing"
-
-puts "making question 5"
-quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningc.id)
-quiz.save!
-puts "question saved"
-
-puts "adding options to the question"
-option = Option.create(content: "Le polystyrène", good: false)
-option.question_id = quiz.id
-option.save!
-
-option = Option.create(content: "Le PVC", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Le PET", good: true)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Le LP-DE", good: true)
-option.question = quiz
-option.save!
-puts "Options added succesfully, well done it's amazing and over"
-
-puts "making question"
-quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningc.id)
-quiz.save!
-puts "question saved"
-
-puts "adding options to the question"
-option = Option.create(content: "Le polypropylene", good: true)
-option.question_id = quiz.id
-option.save!
-
-option = Option.create(content: "Le polystyrène", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Le LP-DE", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Le PVDC", good: false)
+option = Option.create(content: "d'être capable de fonctionner correctement sans investissement extérieur", good: false)
 option.question = quiz
 option.save!
 puts "Options added succesfully, well done it's amazing"
