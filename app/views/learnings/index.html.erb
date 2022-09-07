@@ -40,9 +40,10 @@
           }
         } do |f| %>
       <%= f.input :difficulty, input_html: { "data-learnings-target": "select" }, collection: Learning.difficulties.keys  %>
+    <% end %>
 
-     <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
-        <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>
-     </div>
+    <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
+      <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>
+    </div>
   </div>
 </div>

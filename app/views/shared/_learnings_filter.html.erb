@@ -2,7 +2,7 @@
   <%= link_to lecture_path(Lecture.where(learning_id: learning).first), class: "card-learnings" do %>
     <div>
       <div class="container-fluid">
-        <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
+        <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_').gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
       </div>
 
       <div class="container card-title">
@@ -27,7 +27,7 @@
     <div class="locked-learning">
 
       <div class="container-fluid">
-        <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
+        <%= image_tag "learnings/#{learning.title.downcase.gsub(/\s/, '_').gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "#{learning.title.downcase.gsub(/\s/, '_')}" %>
       </div>
 
       <div class="container card-title">
