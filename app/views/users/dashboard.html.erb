@@ -12,10 +12,10 @@
   </div>
 
   <div class="dash-infos">
-    <div class="card-dash">
+    <div class="card-dash" data-controller = "counter">
       <h5># Points</h5>
       <div>
-        <h2><%= @total_score.positive? ? @total_score : 0 %> <i class="fa-solid fa-leaf"></i></h2>
+        <h2 data-counter-target="counter"><%= @total_score.positive? ? @total_score : 0%> <i class="fa-solid fa-leaf"></i></h2>
       </div>
     </div>
     <div class="card-dash">
@@ -53,6 +53,12 @@
             <%= image_tag badge, alt: "badge", class: "img-badge" %>
           </div>
         <% end %>
+        <% @badges_locked.each do |badge| %>
+          <div class="mini-cards badge-locked">
+            <%= image_tag badge, alt: "badge", class: "img-badge" %>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+        <% end %>
       <% end %>
     </div>
 
@@ -61,10 +67,12 @@
         <p>Aucune lesson</p>
       <% else %>
         <% @learnings_todo.each do |learning| %>
-          <div class="mini-cards">
-            <p><%= learning.title %></p>
-            <%= image_tag "learnings/#{learning.title.downcase.gsub(" ","_")}.jpg", alt: "learning", width: 100%>
-          </div>
+          <%= link_to lecture_path(learning.lectures.first) do %>
+            <div class="mini-cards">
+              <p><%= learning.title %></p>
+              <%= image_tag "learnings/#{learning.title.downcase.gsub(" ", "_").gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "learning", width: 100%>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

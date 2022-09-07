@@ -8,7 +8,7 @@ class LearningsController < ApplicationController
       @learning = Learning.find(reward.learning_id)
     end
 
-    # Filter Learnings
+    # Filter learnings
     if params[:query].present?
       @learnings = Learning.where(city: params[:query].capitalize)
     else

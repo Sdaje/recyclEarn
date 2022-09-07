@@ -26,20 +26,10 @@ user.save!
 user = User.new(email: "dev@recylearn.com", password: "secret", city: "Bordeaux", first_name: "Jean", last_name: "Neymar")
 user.save!
 
-puts "Making a course"
-learning = Learning.new(title: "Animals", topic: "Fox", city: "Bordeaux", difficulty: 1, score: 80)
-learning.save!
-puts "Course made"
-
 puts "Making a second course"
 learninga = Learning.new(title: "Les labels du plastique", topic: "Plastique", city: "Toutes", difficulty: 3, score: 80)
 learninga.save!
 puts "Course made"
-
-puts "Adding a lesson"
-lecture = Lecture.new(title: "Pokedex IRL", content: "<h1> There's many many pets in Bordeaux </h1><br><p>There's <strong>cats</strong> that do Meow, <strong>dogs</strong>, who are the descendant of wolves, who do woof.</p><br><p>It's gonna be too much empty if I don't add a bit of text so here you go, it's rainy today, we are at Bordeaux, the sun is a bit hidden behind the clouds and I wouldn't complain for this to happen more often. I dont know what to write next so here is Lorem</p><br><h2>Lorem Ipsum</h2><br>Aliquam risus augue, sollicitudin vel elit quis, finibus vestibulum tortor. Nulla ut malesuada justo. In viverra, mauris sed volutpat suscipit, dolor justo pulvinar libero, nec placerat nisi sem ut arcu. Nunc turpis tellus, fermentum vitae mauris eget, iaculis posuere odio. Phasellus euismod malesuada nunc bibendum tincidunt. Nam quis sapien pharetra, ornare diam non, ultricies nibh. Vestibulum aliquam nunc nunc, a euismod libero dapibus sodales. Morbi consequat justo nibh, posuere cursus quam interdum vel. In sed enim et justo consectetur mattis. Curabitur gravida ullamcorper ante, a sodales odio tempor ut. Pellentesque non mauris rhoncus metus porttitor elementum. Nulla ullamcorper, orci quis tincidunt mattis, nunc risus congue arcu, vitae feugiat nunc enim et augue.<br><br><br><p>Would you like to know more ?<p><br><br><br><p>You wont but here are some cat pics.</p><br><img src='https://images.unsplash.com/photo-1561389881-a5d8d5549588?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80' alt='cat pic' width='400' height ='200'><br><br><img src='https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80' alt='cat pic2' width='400' height ='500'><br><br><img src='https://images.unsplash.com/photo-1605450648855-63f9161b7ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80' alt='cat pic3' width='400' height ='400'><p> Click on the button below to start the quiz</p>",learning_id: learning.id)
-lecture.save!
-puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 0/7"
 lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learninga.id)
@@ -309,99 +299,6 @@ option.question = quiz
 option.save!
 puts "Options added succesfully, well done it's amazing"
 
-puts "making question 2"
-quiz = Question.new(content: "What does the wolf says ?", learning_id: learning.id)
-quiz.save!
-puts "question saved"
-
-puts "adding options to the question"
-option = Option.create(content: "Woof", good: true)
-option.question_id = quiz.id
-option.save!
-
-option = Option.create(content: "Meow", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Moo", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Answer D", good: false)
-option.question = quiz
-option.save!
-puts "Options 2 added succesfully, well done it's amazing"
-
-puts "making question 3"
-quiz = Question.new(content: "What does the cat says ?", learning_id: learning.id)
-quiz.save!
-puts "question saved"
-
-puts "adding options to the question"
-option = Option.create(content: "Woof", good: false)
-option.question_id = quiz.id
-option.save!
-
-option = Option.create(content: "Meow", good: true)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Moo", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Answer D", good: false)
-option.question = quiz
-option.save!
-puts "Options added succesfully, well done it's amazing"
-
-puts "making question 4"
-quiz = Question.new(content: "What does the dog says ?", learning_id: learning.id)
-quiz.save!
-puts "question saved"
-
-puts "adding options to the question"
-option = Option.create(content: "Woof", good: true)
-option.question_id = quiz.id
-option.save!
-
-option = Option.create(content: "Meow", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Moo", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Answer D", good: false)
-option.question = quiz
-option.save!
-puts "Options added succesfully, well done it's amazing"
-
-puts "making question 5"
-quiz = Question.new(content: "What does the D says ?", learning_id: learning.id)
-quiz.save!
-puts "question saved"
-
-puts "adding options to the question"
-option = Option.create(content: "Woof", good: false)
-option.question_id = quiz.id
-option.save!
-
-option = Option.create(content: "Meow", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Moo", good: false)
-option.question = quiz
-option.save!
-
-option = Option.create(content: "Answer D", good: true)
-option.question = quiz
-option.save!
-puts "Options added succesfully, well done it's amazing and over"
-
-
 puts "Create composters"
 filepath = "db/data_base/composteur_bordeaux.json"
 composteurs = JSON.parse(File.read(filepath))
@@ -446,3 +343,1307 @@ puts "#{containers.count} Glass containers created"
 
 puts "Create fun facts"
 FunFact.create!(content:"Prêt de 35% de nos déchets peuvent être compostés")
+
+puts "Making a third course"
+learningb = Learning.new(title: "Jeter ses déchets", topic: "Routine", city: "Bordeaux", difficulty: 1, score: 80)
+learningb.save!
+puts "Course made"
+
+puts "Making a forth course"
+learningc = Learning.new(title: "Réduire son bilan carbone", topic: "Routine", city: "Bordeaux", difficulty: 2, score: 110)
+learningc.save!
+puts "Course made"
+
+puts "Making a fifth course"
+learningd = Learning.new(title: "Gérer sa consommation", topic: "Plastique", city: "Toutes", difficulty: 1, score: 120)
+learningd.save!
+puts "Course made"
+
+puts "Making a sixth course"
+learninge = Learning.new(title: "Jeter ses déchets", topic: "Plastique", city: "Toulouse", difficulty: 1, score: 60)
+learninge.save!
+puts "Course made"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningb.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningb.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningb.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningb.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningc.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningd.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningd.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningd.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningd.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learninge.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learninge.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learninge.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learninge.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningb.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningb.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningb.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningb.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningb.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningb.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningc.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningc.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningc.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningc.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningc.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningc.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learninge.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learninge.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learninge.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learninge.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learninge.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learninge.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningd.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningd.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningd.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningd.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningd.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningd.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "Making a third course"
+learningf = Learning.new(title: "Les déchets ménagers", topic: "Déchets complexes", city: "Bordeaux", difficulty: 2, score: 80)
+learningf.save!
+puts "Course made"
+
+puts "Making a forth course"
+learningg = Learning.new(title: "Habitudes de vie", topic: "Routine", city: "Bordeaux", difficulty: 2, score: 110)
+learningg.save!
+puts "Course made"
+
+puts "Making a fifth course"
+learningh = Learning.new(title: "La croissance verte", topic: "Ecologie", city: "Toutes", difficulty: 1, score: 120)
+learningh.save!
+puts "Course made"
+
+puts "Making a sixth course"
+learningi = Learning.new(title: "Se déplacer à Toulouse", topic: "Routine", city: "Toulouse", difficulty: 1, score: 80)
+learningi.save!
+puts "Course made"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningf.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningf.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningf.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningf.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningg.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningg.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningg.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningg.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 0/"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningi.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 1/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningi.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 2/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningi.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "Adding a lesson in lecture 2 3/7"
+lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningi.id)
+lecture.save!
+puts "lecture added to learning"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningf.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningf.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningf.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningf.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningf.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningf.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningg.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningg.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningg.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningg.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningg.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningg.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningh.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningh.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningh.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningh.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningh.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningh.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question"
+quiz = Question.new(content: "Le PVC est un plastique qui est", learning_id: learningi.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "souple et difficile à recycler", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "dûr et facile à recycler", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "souple et facile à recycler", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "dûr et difficile à recycler", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 2"
+quiz = Question.new(content: "Comment peut-on différencier le PET et le PEH ?", learning_id: learningi.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "le label sur le plastique et leur opacité", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "le label sur le plastique et la dureté", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur couleur", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "le label sur le plastique et leur utilisation très différentes", good: false)
+option.question = quiz
+option.save!
+puts "Options 2 added succesfully, well done it's amazing"
+
+puts "making question 3"
+quiz = Question.new(content: "De nombreux plastiques sont recyclables, et afin de faciliter cela, on les tries selon les :", learning_id: learningi.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "5 différents labels de plastiques", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "5 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents types de plastiques", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "7 différents labels de plastique", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 4"
+quiz = Question.new(content: "Quel est le plastique utilisé majoritairement pour les sachets de pains ou les sacs de nourriture surgelés ?", learning_id: learningi.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le PET", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PP", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PS", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"
+
+puts "making question 5"
+quiz = Question.new(content: "Quel est le plastique le plus recyclé au monde et donc le plus safe à acheté ?", learning_id: learningi.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polystyrène", good: false)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le PVC", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PET", good: true)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: true)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing and over"
+
+puts "making question"
+quiz = Question.new(content: "Quel est le plastique le moins recyclé au monde, et donc le plus nocif parmis ceux recyclables ?", learning_id: learningi.id)
+quiz.save!
+puts "question saved"
+
+puts "adding options to the question"
+option = Option.create(content: "Le polypropylene", good: true)
+option.question_id = quiz.id
+option.save!
+
+option = Option.create(content: "Le polystyrène", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le LP-DE", good: false)
+option.question = quiz
+option.save!
+
+option = Option.create(content: "Le PVDC", good: false)
+option.question = quiz
+option.save!
+puts "Options added succesfully, well done it's amazing"

@@ -5,7 +5,7 @@
       <div class="card-learnings">
 
         <div class="container-fluid">
-          <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_')}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
+          <%= image_tag "learnings/#{@learning.title.downcase.gsub(/\s/, '_').gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "#{@learning.title.downcase.gsub(/\s/, '_')}" %>
         </div>
 
         <div class="container card-title">
@@ -40,10 +40,9 @@
           }
         } do |f| %>
       <%= f.input :difficulty, input_html: { "data-learnings-target": "select" }, collection: Learning.difficulties.keys  %>
-    <% end %>
 
-    <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
-      <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>
-    </div>
+     <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
+        <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>
+     </div>
   </div>
 </div>

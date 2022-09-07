@@ -1,9 +1,10 @@
 #quiz {
   #little-info {
     position: absolute;
-    right: 20px;
-    top: 140px;
-    font-size: 10px;
+    right: 55px;
+    top: 130px;
+    font-size: 13px;
+    color: $green;
   }
   .container {
     #advancing-bar {
@@ -91,6 +92,7 @@
     color: black;
     background-color: #40A858;
     box-shadow: 0 0 6px #b5b5b5;
+    color: $white;
   }
 
   button {

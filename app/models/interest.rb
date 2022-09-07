@@ -7,5 +7,5 @@ class Interest < ApplicationRecord
   validates :longitude, presence: true
   validates :latitude, presence: true
 
-  enum category: { composter: 1, recycling_center: 2, glass_container: 3 }
+  enum category: { composteur: 1, déchetterie: 2, conteneur_à_verre: 3 }
 end
