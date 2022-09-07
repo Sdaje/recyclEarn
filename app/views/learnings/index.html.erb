@@ -44,7 +44,7 @@
     <% end %>
 
     <div class="scrolling-wrapper-flexbox" data-learnings-target="learnings">
-      <%= render "shared/learnings_filter", learnings: @learnings %>
+      <%= render "shared/learnings_filter", { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings } %>
     </div>
   </div>
 </div>

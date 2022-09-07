@@ -16,7 +16,8 @@ class LearningsController < ApplicationController
     end
 
     if params[:filter]
-      @difficulties_learnings = Learning.where(difficulty: params[:filter])
+      @learnings = Learning.where(difficulty: params[:filter])
+      # raise
     end
 
     # Sort learnings by locked status
@@ -29,7 +30,7 @@ class LearningsController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text {
         render  partial: "shared/learnings_filter",
-                locals: { learnings: @difficulties_learnings },
+                locals: { unlocked_learnings: @unlocked_learnings, locked_learnings: @locked_learnings },
                 formats: [:html]
       }
     end
