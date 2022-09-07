@@ -1,6 +1,6 @@
 
 <% if @reward.validation? %>
-  <%= render "rewards/score", { message: "Félicitations!", token: "Vous avez gagné #{@reward.learning.score} points" } %>
+  <%= render "rewards/score", { message: "Félicitations!", token: @reward.learning.score } %>
 <% else %>
   <%= render "rewards/score", { message: "Echec ... essaie encore !", token: nil } %>
 <% end %>

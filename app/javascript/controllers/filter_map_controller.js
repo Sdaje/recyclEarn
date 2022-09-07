@@ -15,7 +15,7 @@ export default class extends Controller {
     this.checkboxTargets.forEach((checkbox) => {
       if (checkbox.checked) {
         this.labelTargets.forEach((label) => {
-          if (label.outerText.toLowerCase().replace(" ","_") === checkbox.value) {
+          if (label.outerText.toLowerCase().replaceAll(" ","_") === checkbox.value) {
             label.classList.add("active")
           }
         })
@@ -26,7 +26,7 @@ export default class extends Controller {
         }
       } else {
         this.labelTargets.forEach((label) => {
-          if (label.outerText.toLowerCase().replace(" ","_") === checkbox.value) {
+          if (label.outerText.toLowerCase().replaceAll(" ","_") === checkbox.value) {
             label.classList.remove("active")
           }
         })

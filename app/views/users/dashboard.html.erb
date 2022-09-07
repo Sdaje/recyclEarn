@@ -53,6 +53,12 @@
             <%= image_tag badge, alt: "badge", class: "img-badge" %>
           </div>
         <% end %>
+        <% @badges_locked.each do |badge| %>
+          <div class="mini-cards badge-locked">
+            <%= image_tag badge, alt: "badge", class: "img-badge" %>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+        <% end %>
       <% end %>
     </div>
 

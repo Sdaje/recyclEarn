@@ -80,11 +80,10 @@
 .infos-visible{
   overflow-x: scroll;
   white-space: nowrap;
-  margin: 12px;
   display: flex;
   opacity: 1;
   height: auto;
-  width: calc(100% - 150px);
+  width: calc(100% - 120px);
   transition: opacity 1s ease-out;
   z-index: 1;
   position: absolute;
@@ -97,4 +96,15 @@
   overflow: hidden;
   z-index: 0;
   position: absolute;
+}
+
+.badge-locked {
+  filter: opacity(0.3);
+  .fa-lock{
+    position: absolute;
+    top: -33px;
+    left: 7px;
+    font-size: 22px;
+    color: $green;
+  }
 }
