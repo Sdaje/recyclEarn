@@ -32,12 +32,6 @@ class LearningsController < ApplicationController
     end
   end
 
-  def filter
-    if params[:difficulty].present?
-      # raise
-    end
-  end
-
   private
 
   def calculate_user_score
