@@ -15,7 +15,9 @@
     <div class="share-container">
       <%= render "rewards/share", {token: token}%>
     </div>
-    <button><%= link_to "Retour aux cours", learnings_path %></button>
+    <div class='container mb'>
+      <%= link_to "Retour aux cours", learnings_path, class: "start-button" %>
+    </div>
 
   <% else %>
     <div class="card-failed">
@@ -36,6 +38,8 @@
         </div>
       <% end %>
     </div>
-    <button><%= link_to "Retour au cours", lecture_path(@reward.learning.lectures.first) %></button>
+    <div class="container mb">
+      <%= link_to "Retour au cours", lecture_path(@reward.learning.lectures.first), class:"start-button" %>
+    </div>
   <% end %>
 </div>
