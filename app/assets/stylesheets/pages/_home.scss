@@ -12,19 +12,6 @@ a {
   filter: opacity(0.3);
 }
 
-a.btn-blue {
-  margin: 20px 0;
-  padding: 16px;
-  border-radius: 10px;
-  width: 100%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: $blue;
-  color: $white;
-}
-
 .inline-flex {
   display: flex;
   align-items: center;
