@@ -984,7 +984,7 @@ learningh.save!
 puts "Course made"
 
 puts "Making a sixth course"
-learningi = Learning.new(title: "Se déplacer à Toulouse", topic: "Routine", city: "Toulouse", difficulty: 1, score: 200)
+learningi = Learning.new(title: "Se déplacer à Toulouse", topic: "Routine", city: "Toulouse", difficulty: 2, score: 400)
 learningi.save!
 puts "Course made"
 
@@ -1029,22 +1029,61 @@ lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 0/"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture = Lecture.new(title: "Apprendre",
+                      content:
+                        "<h3>Le recyclage des plastiques</h3>
+                        <br>
+                        <p>Tout n’est pas bon à recycler ! En effet, certains types de plastique ne peuvent pas être retraités car ils contiennent des produits chimiques. S’ils sont recyclés, ces produits toxiques se libèrent et entraînent des résultats désastreux pour la planète.</p>
+                        <br>
+                        <h3>Trois types d’emballages plastiques:</h3>
+                        <p> - le PET: bouteille d’eau, flacon de gel douche, etc.</p>
+                        <p>	- le PVC: pot de yaourt, produits ménagers, etc.</p>
+                        <p>	- le PS: barquette alimentaire, couverts jetables, etc.</p>
+                        <br>
+                        <h3>Que recycler ?</h3>
+                        <p>Si le PET se recycle parfaitement, ce n’est pas le cas des 2 autres types de plastique qui ne sont pas purs et qui ont des conséquences néfastes pour l’environnement si ils sont chauffés.</p>
+                        <br>
+                        <img src='https://www.processalimentaire.com/var/site/storage/images/_aliases/reference/0/5/6/4/3864650-1-fre-FR/emballage%20plastique%202.jpg'>",
+                        learning_id: learningh.id)
 lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 1/7"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture = Lecture.new(title: "Apprendre",
+                      content:
+                        '<h3>TOUS LES VERRES NE SE RECYCLENT PAS !</h3>
+                        <figure>
+                          <img src="https://sitetom.syctom-paris.fr/fileadmin/mediatheque_TOM/recyclage_verre/H1_recycleverre.jpg" alt="recyclage du plastique" />
+                        </figure>
+                        <p>Comme pour le plastique, tous les conditionnements en verre ne se recyclent pas. Voici la liste des verres non recyclables:</p>
+                        <br>
+                        <p>  - la vaisselle en verre (verres, assiettes, etc.)</p>
+                        <p>  - les plats en Pyrex</p>
+                        <p>  - les ampoules</p>
+                        <p>  - les miroirs</p>
+                        <p>  - les vitrages</p>
+                        <br>
+                        <p>Ces types de verre ne peuvent être recyclés pour une raison précise: leur température de fusion est différente de celle du verre d’emballage. De plus, ils contiennent des composants chimiques, comme les plastiques PVC ou PS, qui provoquent de dangereuses émanations.</p>
+                        <h5>En résumé:</h5>
+                        <p><strong>Seuls</strong> les verres d’emballage (bouteilles, bocaux et flacons) sont recyclables à l’infini. Mais tout le reste ne l’est pas ! Premier maillon de la chaîne du recyclage, le consommateur doit donc soigneusement pré-trier ses verres d’emballages et <strong>être attentif</strong> aux contenants qu’il dépose dans les bacs de collecte.</p>',
+                      learning_id: learningh.id)
 lecture.save!
 puts "lecture added to learning"
 
 puts "Adding a lesson in lecture 2 2/7"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
-lecture.save!
-puts "lecture added to learning"
-
-puts "Adding a lesson in lecture 2 3/7"
-lecture = Lecture.new(title: "Apprendre", content: "<h5>Dans ce cours, vous allez apprendre à reconnaître les différents plastiques qui sont recyclables ainsi qu'apprendre ce qu'ils peuvent devenir une fois recyclés.</h5><br><p>Le plus important étant de reconnaître les différents labels, il existe 7 labels de plastique.</p><br><img src='https://blutopia.org/wp-content/uploads/2020/09/Label-Plastiques.jpg' alt='info-panel'>",learning_id: learningh.id)
+lecture = Lecture.new(title: "Apprendre",
+                      content:
+                        '<h3>L’ORIGINE DU SYMBOLE DU RECYCLAGE</h3>
+                        <figure>
+                          <img src="https://www.1min30.com/wp-content/uploads/2017/07/logo-Recycle.jpg" alt="logo du recyclage" />
+                        </figure>
+                        <br>
+                        <p>Vous connaissez sans doute le logo du recyclage, mais savez-vous quelle est son origine ? </p>
+                        <h5>Explication</h5>
+                        <p>Avec sa boucle constituée de trois flèches vertes, le ruban de Möbius est le sigle universel du recyclage depuis plus de 50 ans.
+                        Sa spécificité repose sur sa continuité: elle ne peut pas être brisée.
+                        C’est pour cette raison que le ruban de Möbius fut choisi comme emblème du recyclage lors du premier Jour de la Terre, le 22 avril 1970. Il incarne le <strong>cercle vertueux du recyclage</strong>, avec le principe de la transformation des déchets en ressources utiles et en nouvelles matières premières.</p>',
+                      learning_id: learningh.id)
 lecture.save!
 puts "lecture added to learning"
 
