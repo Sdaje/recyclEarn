@@ -8,9 +8,9 @@
     </div>
     <div class="quiz-buttons">
       <% if @question.learning.next_question(@question).present? %>
-          <%= f.submit value: 'Suivant' %>
+          <%= f.submit value: 'Suivant', class: "start-button" %>
       <% else %>
-          <%= f.submit value: 'Fin du quiz' %>
+          <%= f.submit value: 'Terminer le quiz', class: "start-button" %>
       <% end %>
     </div>
  <% end %>
