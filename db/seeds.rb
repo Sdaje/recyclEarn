@@ -27,7 +27,7 @@ user = User.new(email: "dev@recylearn.com", password: "secret", city: "Bordeaux"
 user.save!
 
 puts "Making a second course"
-learninga = Learning.new(title: "Les labels du plastique", topic: "Plastique", city: "Toutes", difficulty: 3, score: 80)
+learninga = Learning.new(title: "Les labels du plastique", topic: "Plastique", city: "Toutes", difficulty: 3, score: 600)
 learninga.save!
 puts "Course made"
 
@@ -345,22 +345,22 @@ puts "Create fun facts"
 FunFact.create!(content:"Prêt de 35% de nos déchets peuvent être compostés")
 
 puts "Making a third course"
-learningb = Learning.new(title: "Jeter ses déchets", topic: "Routine", city: "Bordeaux", difficulty: 1, score: 80)
+learningb = Learning.new(title: "Jeter ses déchets", topic: "Routine", city: "Bordeaux", difficulty: 1, score: 200)
 learningb.save!
 puts "Course made"
 
 puts "Making a forth course"
-learningc = Learning.new(title: "Réduire son bilan carbone", topic: "Routine", city: "Bordeaux", difficulty: 2, score: 110)
+learningc = Learning.new(title: "Réduire son bilan carbone", topic: "Routine", city: "Bordeaux", difficulty: 2, score: 400)
 learningc.save!
 puts "Course made"
 
 puts "Making a fifth course"
-learningd = Learning.new(title: "Gérer sa consommation", topic: "Plastique", city: "Toutes", difficulty: 1, score: 120)
+learningd = Learning.new(title: "Gérer sa consommation", topic: "Plastique", city: "Toutes", difficulty: 1, score: 200)
 learningd.save!
 puts "Course made"
 
 puts "Making a sixth course"
-learninge = Learning.new(title: "Jeter ses déchets", topic: "Plastique", city: "Toulouse", difficulty: 1, score: 60)
+learninge = Learning.new(title: "Jeter ses déchets", topic: "Plastique", city: "Toulouse", difficulty: 1, score: 200)
 learninge.save!
 puts "Course made"
 
@@ -969,22 +969,22 @@ option.save!
 puts "Options added succesfully, well done it's amazing"
 
 puts "Making a third course"
-learningf = Learning.new(title: "Les déchets ménagers", topic: "Déchets complexes", city: "Bordeaux", difficulty: 2, score: 80)
+learningf = Learning.new(title: "Les déchets ménagers", topic: "Déchets", city: "Bordeaux", difficulty: 2, score: 400)
 learningf.save!
 puts "Course made"
 
 puts "Making a forth course"
-learningg = Learning.new(title: "Habitudes de vie", topic: "Routine", city: "Bordeaux", difficulty: 2, score: 110)
+learningg = Learning.new(title: "Habitudes de vie", topic: "Routine", city: "Bordeaux", difficulty: 2, score: 400)
 learningg.save!
 puts "Course made"
 
 puts "Making a fifth course"
-learningh = Learning.new(title: "La croissance verte", topic: "Ecologie", city: "Toutes", difficulty: 1, score: 120)
+learningh = Learning.new(title: "La croissance verte", topic: "Ecologie", city: "Toutes", difficulty: 1, score: 200)
 learningh.save!
 puts "Course made"
 
 puts "Making a sixth course"
-learningi = Learning.new(title: "Se déplacer à Toulouse", topic: "Routine", city: "Toulouse", difficulty: 1, score: 80)
+learningi = Learning.new(title: "Se déplacer à Toulouse", topic: "Routine", city: "Toulouse", difficulty: 1, score: 200)
 learningi.save!
 puts "Course made"
 
