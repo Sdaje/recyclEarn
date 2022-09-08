@@ -6,7 +6,8 @@ export default class extends Controller {
   static targets = ["radio", "button"]
 
   connect() {
-
+    this.buttonTargets[0].classList.add('radio-active')
+    document.getElementById('button').firstElementChild.nextElementSibling.firstElementChild.checked = true
   }
 
   fill(event) {

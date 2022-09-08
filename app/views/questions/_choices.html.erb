@@ -1,16 +1,16 @@
 <div class="banner-answers">
  <%= simple_form_for([@question, @answer]) do |f| %>
     <div class="event-listener" id='button'>
-      <%= f.collection_radio_buttons :option, @options.map {|option| [option.content, option.content]}, :first, :last do |b| %>
+      <%= f.collection_radio_buttons :option, options.map {|option| [option.content, option.content]}, :first, :last do |b| %>
         <%= b.radio_button class: "radio-butt", data: { questions_target: 'radio', action: "click->questions#fill" } %>
         <%= b.label class:"labels", data: { questions_target: 'button' }%>
         <% end %>
     </div>
     <div class="quiz-buttons">
       <% if @question.learning.next_question(@question).present? %>
-          <%= f.submit value: 'Next', class:"start-button"%>
+          <%= f.submit value: 'Suivant' %>
       <% else %>
-          <%= f.submit value: 'Finish quiz', class:"start-button"%>
+          <%= f.submit value: 'Fin du quiz' %>
       <% end %>
     </div>
  <% end %>
