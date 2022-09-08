@@ -1,17 +1,23 @@
 <div class="container-reward">
 
-  <h1><%= message %></h1>
 
   <% if token.present? %>
+    <h1><%= message %></h1>
     <div class="share-container">
       <%= render "rewards/share", {token: token}%>
     </div>
-    <button><%= link_to "Back to Courses", learnings_path %></button>
+    <button><%= link_to "Retour aux cours", learnings_path %></button>
 
   <% else %>
-    <h5 id='answer-found'>
-      Nous avons trouvé <%= @reward.learning.questions.count - @reward.achievement %> mauvaises réponses
-    </h5>
+    <div class="card-failed">
+      <div class='wrong'>
+        <h1><%= message %></h1>
+        <h2>Tu n'as pas eu assez de bonne réponses</h2>
+      </div>
+      <div id='answer-found'>
+        <h3># <%= @reward.learning.questions.count - @reward.achievement %></h3>
+      </div>
+    </div>
     <div class="container-answers">
       <% @reward.learning.answers.joins(:option).where(user: current_user, option: { good: false }).each do |answer| %>
         <div class="answer-card">
@@ -21,7 +27,7 @@
         </div>
       <% end %>
     </div>
-    <button><%= link_to "Retour à la lesson", lecture_path(@reward.learning.lectures.first) %></button>
+    <button><%= link_to "Retour au cours", lecture_path(@reward.learning.lectures.first) %></button>
 
   <% end %>
 

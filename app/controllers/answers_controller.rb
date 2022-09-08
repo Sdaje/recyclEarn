@@ -19,6 +19,9 @@ class AnswersController < ApplicationController
         redirect_to(reward_path(@reward))
       end
     else
+      @options = @question.options
+      @answer = Answer.new
+      @user_question_number = @question.questions_left
       render "questions/show", status: :unprocessable_entity
     end
   end
