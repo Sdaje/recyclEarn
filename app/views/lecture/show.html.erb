@@ -5,18 +5,18 @@
 </div>
 <br>
 <div class="start">
-  <div class="start-button">
+  <div>
     <% if @learning.lectures.where('id < ?', @lecture.id).present? %>
-      <%= link_to "Chapitre précédent", lecture_path(@learning.lectures.where('id < ?', @lecture.id).last) %>
+      <%= link_to "Chapitre précédent", lecture_path(@learning.lectures.where('id < ?', @lecture.id).last), class:"start-button" %>
     <% else %>
-      <%= link_to "Revenir aux leçons", learnings_path %>
+      <%= link_to "Revenir aux leçons", learnings_path, class:"start-button" %>
     <% end %>
   </div>
-  <div class="start-button">
+  <div>
     <% if @learning.lectures.where('id > ?', @lecture.id).present? %>
-      <%= link_to "Chapitre suivant", lecture_path(@learning.lectures.where('id > ?', @lecture.id).first) %>
+      <%= link_to "Chapitre suivant", lecture_path(@learning.lectures.where('id > ?', @lecture.id).first), class:"start-button" %>
     <% else %>
-      <%= link_to "Commencez le quiz", question_path(@learning.questions.first) %>
+      <%= link_to "Commencez le quiz", question_path(@learning.questions.first), class:"start-button" %>
     <% end %>
   </div>
 </div>

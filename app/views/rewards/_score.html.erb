@@ -1,7 +1,5 @@
 <div class="container-reward">
-
   <h1><%= message %></h1>
-
   <% if token.present? %>
     <div class="share-container">
       <%= render "rewards/share", {token: token}%>
@@ -21,8 +19,7 @@
         </div>
       <% end %>
     </div>
-    <button><%= link_to "Retour à la lesson", lecture_path(@reward.learning.lectures.first) %></button>
+    <%= link_to "Retour à la lesson", lecture_path(@reward.learning.lectures.first), class:"start-button" %>
 
   <% end %>
-
 </div>

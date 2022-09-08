@@ -1,4 +1,9 @@
 #quiz {
+  .quiz-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   #little-info {
     position: absolute;
     right: 55px;
@@ -63,12 +68,13 @@
   }
 
   input {
-    background-color: rgba(64, 168, 88, 0.7);
-    border-radius: 5px;
-    width: 60%;
+    // background-color: rgba(64, 168, 88, 0.7);
+    // border-radius: 5px;
+    // width: 60%;
     border: none;
-    height: 50px;
+    // height: 50px;
     font-weight: bold;
+    margin: 0 auto;
   }
 
   .radio-butt{
