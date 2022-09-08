@@ -2,7 +2,18 @@
 
 
   <% if token.present? %>
-    <h1><%= message %></h1>
+    <div class="card-success">
+      <div class="badge-won">
+        <h2 style="font-size:11px">Badge gagné</h2>
+      </div>
+      <div class="right">
+        <h1><%= message %></h1>
+        <h2>Tu as réussi le quiz !</h2>
+      </div>
+      <div id='points-found'>
+        <h3><span style="color: white; font-size:17px"> <%= token %><i class="fa-solid fa-leaf"></i></span></h3>
+      </div>
+    </div>
     <div class="share-container">
       <%= render "rewards/share", {token: token}%>
     </div>

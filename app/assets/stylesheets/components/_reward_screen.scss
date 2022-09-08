@@ -108,7 +108,7 @@
   .share-container img {
     border: 1px solid $green;
     border-radius: 50%;
-
+    margin-top: 40px;
   }
 }
 
@@ -151,4 +151,53 @@
     margin-right: 50px;
     margin-top: 22px;
   }
+}
+
+.win-message {
+  margin: 10px 0 0 0;
+}
+
+.card-success {
+  height: 11vh;
+  margin: 7vh 4vw 2vh 4vw;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  color: #858585;
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 12px;
+  }
+  .right {
+    position: absolute;
+    text-align: left;
+    margin-left: 121px;
+    color: #5b5b5b;
+    margin-right: 50px;
+    margin-top: 22px;
+  }
+  #points-found {
+    position: absolute;
+    top: 79px;
+    right: 44px;
+    width: 63px;
+    height: 47px;
+    border-radius: 10px;
+    background-color: #3ea857;
+  }
+  .badge-won {
+    position: absolute;
+    top: 78px;
+    left: 33px;
+    width: 63px;
+    height: 47px;
+    border-radius: 10px;
+    padding: 7px 2px;
+    background-color: #3ea859;
+    color: white;
+  }
+}
+.fa-4x {
+  color: #3f3f3f;
 }

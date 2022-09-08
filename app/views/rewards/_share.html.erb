@@ -1,7 +1,5 @@
-<h3>Vous avez gagné <span class="green"> <%= token %> points <i class="fa-solid fa-leaf"></i></span> </h3>
-<h3>Badge gagné !</h3>
 <%= image_tag "badges/#{@reward.learning.title.downcase.gsub(" ", "_").gsub("é","e").gsub("è","e").gsub("à","a")}.png", alt:"image", width: 200 %>
-<h3>Partage ton résultat</h3>
+<h3 style="color: #595757">Partage ton résultat</h3>
     <div class="share">
       <a href="https://twitter.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter fa-4x"></i></a>
       <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-4x"></i></a>
