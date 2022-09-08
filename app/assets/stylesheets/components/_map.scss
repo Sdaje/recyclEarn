@@ -1,5 +1,9 @@
 .mapboxgl-popup {
   max-width: 300px;
+  border-radius: 10px;
+  p {
+    margin-bottom: 5px;
+  }
 }
 
 .mapboxgl-popup-content {
@@ -23,4 +27,11 @@
 
 .map-filters::-webkit-scrollbar {
   display: none;
+}
+
+.btn-popup {
+  background-color: $green;
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
 }

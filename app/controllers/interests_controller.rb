@@ -12,7 +12,13 @@ class InterestsController < ApplicationController
       end
       info_window_html = "<h3>#{interest.category.capitalize.gsub('_', ' ')}</h3>
                       <p>#{interest.address}</p>
-                      #{interest.website.nil? ? '' : "<a href='#{interest.website}'>Web site</a>"}"
+                      <a href ='#',
+                         class = 'btn-popup',
+                         data-action='click->map#direction',
+                         data-map-long-value=#{interest.longitude}
+                         data-map-lat-value=#{interest.latitude}>
+                         <b>Obtenir le trajet <i class='fa-solid fa-route'></i></b>
+                      </a>"
       {
         lat: interest.latitude,
         lng: interest.longitude,
