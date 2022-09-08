@@ -2,9 +2,8 @@
 
   <div class="container inline-flex infos-frame">
     <div>
-      <h2>Salut <%= @user.first_name %> !</h2>
-      <p><%= @user.city %></p>
-      <p class="underscore">_______</p>
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+      <p class="city-name"><%= @user.city %></p>
     </div>
     <div class="avatar">
       <img src="https://avatars.githubusercontent.com/u/32631203?v=4 " alt="">
@@ -35,26 +34,27 @@
   </div>
 
   <div class="learnings-info" data-controller="dashboard-nav">
-    <ul class = "nav-pills">
-      <li data-action = "click->dashboard-nav#badgeClick" data-dashboard-nav-target = "badgeNav">
+    <ul class="nav-pills">
+      <div class="active-rectangle" data-dashboard-nav-target="activeRect"></div>
+      <li class="badge-nav" data-action="click->dashboard-nav#badgeClick" data-dashboard-nav-target="badgeNav">
         <i class="fa-solid fa-trophy"></i>
       </li>
-      <li data-action = "click->dashboard-nav#learningClick" data-dashboard-nav-target = "learningNav">
+      <li class="learning-nav" data-action="click->dashboard-nav#learningClick" data-dashboard-nav-target="learningNav">
         <i class="fa-solid fa-book-open"></i>
       </li>
     </ul>
 
-    <div data-dashboard-nav-target = "badges">
+    <div class="content" data-dashboard-nav-target="badges">
       <% if @badges.empty? %>
         <p>Gagnez des badges !</p>
       <% else %>
         <% @badges.each do |badge| %>
-          <div class="mini-cards">
+          <div class="badges mini-cards">
             <%= image_tag badge, alt: "badge", class: "img-badge" %>
           </div>
         <% end %>
         <% @badges_locked.each do |badge| %>
-          <div class="mini-cards badge-locked">
+          <div class="badges mini-cards badge-locked">
             <%= image_tag badge, alt: "badge", class: "img-badge" %>
             <i class="fa-solid fa-lock"></i>
           </div>
@@ -62,16 +62,14 @@
       <% end %>
     </div>
 
-    <div data-dashboard-nav-target = "learnings">
+    <div class="content" data-dashboard-nav-target = "learnings">
       <% if @learnings_todo.empty? %>
-        <p>Aucune lesson</p>
+        <p class="pill">Aucune lesson</p>
       <% else %>
         <% @learnings_todo.each do |learning| %>
-          <%= link_to lecture_path(learning.lectures.first) do %>
-            <div class="mini-cards">
-              <p><%= learning.title %></p>
-              <%= image_tag "learnings/#{learning.title.downcase.gsub(" ", "_").gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "learning", width: 100%>
-            </div>
+          <%= link_to lecture_path(learning.lectures.first), class:"mini-cards" do %>
+            <p class="pill"><%= learning.title %></p>
+            <%= image_tag "learnings/#{learning.title.downcase.gsub(" ", "_").gsub("é","e").gsub("è","e").gsub("à","a")}.jpg", alt: "learning", width: 100%>
           <% end %>
         <% end %>
       <% end %>
