@@ -12,13 +12,13 @@
 
   <div class="dash-infos">
     <div class="card-dash" data-controller = "counter">
-      <h5># Points</h5>
+      <h5>Points</h5>
       <div>
         <h2 data-counter-target="counter"><%= @total_score.positive? ? @total_score : 0%> <i class="fa-solid fa-leaf"></i></h2>
       </div>
     </div>
     <div class="card-dash">
-    <h5># Lessons</h5>
+    <h5>Leçons</h5>
       <div>
         <h2>
           <%= @learnings_done.count %>

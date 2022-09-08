@@ -1,19 +1,15 @@
-<%# <div class="lone-fact">
-  <h1>Did you know ?</h1>
-  <p>One metric ton of electronical scrap from personal computer contains more gold than 17 tons of unrefined gold ore !</p>
-</div> %>
 <div class="container-fluid">
   <div class="card-cta">
     <div class="container">
       <div class="container">
-        <p>Trouvez des lessons en fonction de votre ville.</p>
+        <p>Trouvez des leçons en fonction de votre ville.</p>
       </div>
       <%= form_with url: learnings_path, method: :get, class:"home-form" do %>
         <div class="input-light">
           <%= text_field_tag :search,
             params[:query],
             class: "form-control",
-            placeholder: "Cherchez dans une ville"
+            placeholder: "Chercher dans une ville"
           %>
           <i class="fa-solid fa-tree-city"></i>
         </div>
