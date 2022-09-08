@@ -1,6 +1,4 @@
 <div class="container-reward">
-
-
   <% if token.present? %>
     <div class="card-success">
       <div class="badge-won">
@@ -39,7 +37,5 @@
       <% end %>
     </div>
     <button><%= link_to "Retour au cours", lecture_path(@reward.learning.lectures.first) %></button>
-
   <% end %>
-
 </div>
