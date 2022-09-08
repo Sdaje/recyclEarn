@@ -1,11 +1,52 @@
 import { Controller } from "@hotwired/stimulus"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+var mapGeoCoder = null;
+var pointer = null;
 
+async function getRoute(longPointer, latPointer, longMarker, latMarker, map) {
+  const query = await fetch(`https://api.mapbox.com/directions/v5/mapbox/walking/${longPointer},${latPointer};${longMarker},${latMarker}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
+    { method: 'GET' }
+  );
+  const json = await query.json();
+  const data = json.routes[0];
+  const route = data.geometry.coordinates;
+  const geojson = {
+    type: 'Feature',
+    properties: {},
+    geometry: {
+      type: 'LineString',
+      coordinates: route
+    }
+  };
+  if (map.getSource('route')) {
+    map.getSource('route').setData(geojson);
+  } else {
+    map.addLayer({
+      id: 'route',
+      type: 'line',
+      source: {
+        type: 'geojson',
+        data: geojson
+      },
+      layout: {
+        'line-join': 'round',
+        'line-cap': 'round'
+      },
+      paint: {
+        'line-color': '#3887be',
+        'line-width': 5,
+        'line-opacity': 0.75
+      }
+    });
+  }
+}
 // Connects to data-controller="map"
 export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array,
+    long: Number,
+    lat: Number,
   }
 
   disconnect() {
@@ -22,7 +63,27 @@ export default class extends Controller {
 
     this.addMarkersToMap()
     this.fitBounds()
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    mapGeoCoder = new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl });
+    this.map.addControl(mapGeoCoder)
+
+    mapGeoCoder.on('result', function(results){
+      pointer = results.result.center
+    });
+  }
+
+
+  direction(event) {
+    event.preventDefault();
+    let route = null
+    console.log(pointer);
+    let longMarker = document.querySelector(".mapboxgl-popup-content a").dataset.mapLongValue
+    let latMarker = document.querySelector(".mapboxgl-popup-content a").dataset.mapLatValue
+    console.log(longMarker);
+    console.log(latMarker);
+    let longPointer = pointer[0]
+    let latPointer = pointer[1]
+    let map = this.map
+    getRoute(longPointer, latPointer, longMarker, latMarker, map)
   }
 
   addMarkersToMap() {
