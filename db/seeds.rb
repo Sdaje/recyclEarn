@@ -347,7 +347,7 @@ end
 puts "#{containers.count} Glass containers created"
 
 puts "Create fun facts"
-FunFact.create!(content:"Prêt de 35% de nos déchets peuvent être compostés")
+FunFact.create!(content:"Près de 35% de nos déchets peuvent être compostés")
 
 puts "Making a third course"
 learningb = Learning.new(title: "Jeter ses déchets", topic: "Routine", city: "Bordeaux", difficulty: 1, score: 200)
