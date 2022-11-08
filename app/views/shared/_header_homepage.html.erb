@@ -1,9 +1,16 @@
 <header>
   <div class="container-fluid inline-flex">
-    <%= image_tag "logo.svg", alt: "Recyclearn" %>
-    <div class="avatar">
-      <img src="https://avatars.githubusercontent.com/u/32631203?v=4 " alt="">
-    </div>
+    <%= link_to root_path do%>
+      <%= image_tag "logo.svg", alt: "Recyclearn" %>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="avatar">
+        <img src="https://avatars.githubusercontent.com/u/32631203?v=4 " alt="">
+      </div>
+      <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+    <% else %>
+      <%= link_to "login",  user_session_path, class: "login-link" %>
+    <% end %>
   </div>
   <div class="container-fluid">
     <p>Prêt à en apprendre <br> sur le recyclage.</p>
